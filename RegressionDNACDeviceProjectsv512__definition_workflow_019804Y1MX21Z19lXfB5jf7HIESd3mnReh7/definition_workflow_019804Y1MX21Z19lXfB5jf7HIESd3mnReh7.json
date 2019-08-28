@@ -1,0 +1,548 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_019804Y1MX21Z19lXfB5jf7HIESd3mnReh7",
+    "name": "Regression_DNAC_DeviceProjects_v5.1.2",
+    "title": "Regression_DNAC_DeviceProjects_v5.1.2",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Regression_DNAC_DeviceProjects_v5.1.2",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK",
+        "name": "Get Access Token",
+        "title": "Get Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Access Token",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_019804MTJ0P1K6defkL64mbn5n115Oy9emQ"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01987KP2Z6UCF1ZV8ALA7t447VRwJ4Rb855",
+        "name": "Get Site Health",
+        "title": "Get Site Health",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Site Health",
+          "input": {
+            "variable_workflow_01987K75V5DOB2O0oEkoGwhjDDvmLQivbsp": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$",
+            "variable_workflow_01987K75V5I5T6iR2bhSLTIBdvTNqoXPJq5": ""
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01987K6KD6FVQ4HgIs5ySPVOOdiwoFFAwFu"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01987GKETS22W2OFvZVBHdGVbIbI2p2b02Z",
+        "name": "Get Overall Client Health",
+        "title": "Get Overall Client Health",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Overall Client Health",
+          "input": {
+            "variable_workflow_01987FZOMA0C47ConJmwFIsJ0TGjdP8aHym": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$",
+            "variable_workflow_01987FZOMA9KA5GT5KsYM3ezRkfcBomLrZc": ""
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01987FZ5I04MJ0pfgEuHDbmc31b6Bj30F9U"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01987CY7ZUNLG66QKGjQThLmp6Q6iuLKdK7",
+        "name": "Get Device Details",
+        "title": "Get Device Details",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device Details",
+          "input": {
+            "variable_workflow_01987B4NVY2J259i1UQFz7hWb82D2BYvcoI": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$",
+            "variable_workflow_01987B4NVYELZ37XiEYRcJt8dxD5YqA9KQv": "50c96308-84b5-43dc-ad68-cda146d80290",
+            "variable_workflow_01987B4NVYIPR2eHGp6MWeyF8Mht9fcBtVW": "uuid",
+            "variable_workflow_01987B4NVYMPJ43AvkkemXZ5EeGxgWMo3Bt": ""
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01987B3JVM7IT5mi3lVhBifmc91LbQxYvox"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019879LGE66OO3vlcVivga1LbzRyDW89BMz",
+        "name": "Get List of Available Namespaces",
+        "title": "Get List of Available Namespaces",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get List of Available Namespaces",
+          "input": {
+            "variable_workflow_0198793M7MFAA3xASsxST5BvK3MtjUhZ5WD": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_0198793019R7O4SplA5QPhFn2f8OtXnIvee"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01980TEYYCBOD3br7X0HIsHgAEpFqXQ57SF",
+        "name": "Get Device by ID",
+        "title": "Get Device by ID",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device by ID",
+          "input": {
+            "variable_workflow_01980SSWFNDFC2UkGp2CvVuP174YUyDX8qi": "",
+            "variable_workflow_01980SSWFNHEV3REGs7vrpt2t1nt9sZD1FK": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01980SRTRLHI577wYFCuSHy60TZQzCgbYZL"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01981MDY4I0AD0BUcTVOgcTQJxDrPdfDsLO",
+        "name": "Get Site Topology",
+        "title": "Get Site Topology",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Site Topology",
+          "input": {
+            "variable_workflow_018BQUBRRAWPW3EttAPLO9QdnIabEwbshVk": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01gR6CfY6nxqLKBHMJ5Gnt8GPimTCxYVk"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01981PZHJP3VX4ZWFw0qkjxW3RESXIkCvdT",
+        "name": "Get VLAN Details",
+        "title": "Get VLAN Details",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get VLAN Details",
+          "input": {
+            "variable_workflow_01981PJ6WJMOM5e79kEDXOQiYTMlXMWNPDG": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01981PIP1QQ7W6oJPwbliUbWdogB0MEE6rR"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01981V5SE15W57HMk8OR7d62zSQud481oiZ",
+        "name": "Get Projects",
+        "title": "Get Projects",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Projects",
+          "input": {
+            "variable_workflow_01981UOKPBQN569iHuToMSRObxQBw7aWcCh": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01981UNWVNMB11bszAjYeHLvM4vPKvpQlUT"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019822EXW2L392BQuxqxgU2SAqpiYHFWDTD",
+        "name": "List Templates",
+        "title": "List Templates",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "List Templates",
+          "input": {
+            "variable_workflow_019821ZATBVG47IusfDqR95GT69nFuyDHHS": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_019821YPAVB9A5HdopsHxdsnI5IYGVee1yO"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01981Y80DL12H75kyICt3jR6CKaWn4OQcRW",
+        "name": "Get Template Details",
+        "title": "Get Template Details",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Template Details",
+          "input": {
+            "variable_workflow_018CGH76T7CXW2Qirhj7plwBfc58LVpMAh1": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$",
+            "variable_workflow_01gqZ6WksRRYxQo6rvDsyRfyGs2LCKVyP": "a57cfa35-4a53-4ea4-a192-c996d9f1441f"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01gqyTHPD08j1eVYCGuBK1NbkvK88O5zd"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01982IPZ5CVKM6aav8me7QhggqfWNXnpNfP",
+        "name": "Get Polling interval for all devices",
+        "title": "Get Polling interval for all devices",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Polling interval for all devices",
+          "input": {
+            "variable_workflow_01982HXJPQW0O3uICmkS8ecBrjjvajfhYpX": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01982HX1WCER06wE4dSRXqwZDrZCoaGvV8C"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01982OOOXPUP74bA4m0Fwqt8OlfxHczcyMK",
+        "name": "Get Device Interface Count",
+        "title": "Get Device Interface Count",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device Interface Count",
+          "input": {
+            "variable_workflow_01982N3SMKSEI3ahlSQA5Zx49Muies699Yg": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01982N39SNXOM4Lbgu2T0XXGRso7e1PEfzl"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01982X4GA8IT84uVDZLVbc0Bc1nqamY74h5",
+        "name": "Get Device Config Count",
+        "title": "Get Device Config Count",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device Config Count",
+          "input": {
+            "variable_workflow_01982RRVQHRVD6eJqrwhGyTgUl2gfHAsOYl": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01982RRC4VQHV788tdxwEGCaNSPp7QyqzS6"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019835PXYVSHO5LgpLQ8ahhbZSjKaXlEsVL",
+        "name": "Get Device Count",
+        "title": "Get Device Count",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device Count",
+          "input": {
+            "variable_workflow_01982Y8FFHBGD4e8PNszn1Rj937bjuGn9iF": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01982Y7XTB5QT1QNBTBRJYICxzxw1InkCwP"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019837WDV0K2Z1ZsPGjuIQWfSXlPTpqpkib",
+        "name": "Get Device List",
+        "title": "Get Device List",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device List",
+          "input": {
+            "variable_workflow_019836WVDYLDM3D1sYRi7SlUmdPB7NHOLdH": "{  \n  \"computeDevice\": true,    \n  \"type\": COMPUTE_DEVICE\",  \n}",
+            "variable_workflow_019836WVDYTUV0Twk0qSVs6orKpNM52Gdkm": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_019836W6BE0O92Yc4MUmSQwFGqWEMdWg0la"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01983K9LVZ9MF5CUoBMuZdMM7kR0v73A31a",
+        "name": "Get Device Config By ID",
+        "title": "Get Device Config By ID",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device Config By ID",
+          "input": {
+            "variable_workflow_01983JGYILKRR2k9EDbOggjG5BNw7fHyJNp": "50c96308-84b5-43dc-ad68-cda146d80290",
+            "variable_workflow_01983JGYILZ2L3ekI14lckhuszYytHYSv5X": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01983JGC4KGDM1WiBmnMPm8WUpFhhCLYMMo"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01983LAS8QI7E7IIlLEn9iZAoWWHCcZdutV",
+        "name": "Get Device Config for all Devices",
+        "title": "Get Device Config for all Devices",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device Config for all Devices",
+          "input": {
+            "variable_workflow_01983KX1ABSBF4VIlFqh54EIRIczw2CxXLy": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01983KWGHHKLN3eZihtYlF3HI1kCzMD0eeR"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01984BNUHJ7BS47fjAMPXH9Uz5C1BLGAENU",
+        "name": "Get Module Count",
+        "title": "Get Module Count",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Module Count",
+          "input": {
+            "variable_workflow_01984AQI22YML2V5pRIfgwlQhRiO22T6f84": "NULL",
+            "variable_workflow_01984AQI232NB5N88tpAUBeRWel62OvJt26": "50c96308-84b5-43dc-ad68-cda146d80290",
+            "variable_workflow_01984AQI236JH0zDh5Zwbqa9dMxoDscT6Cm": "$activity.definition_activity_0198052O25W3F5KONbqMBfzuWJgM8AQf8MK.output.variable_workflow_019804N87FR284aLjReVlfbI11OCYY1xm5T$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "0197ZRICBXNTI75ZG4Ulu2rEx6Pm3dssqcw",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01984APTJ7DSY3WXcRTxqAUEk4DwjcrS4PW"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "variables": {
+    "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF": {
+      "unique_name": "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF",
+      "properties": {
+        "value": "X-Auth-Token",
+        "scope": "global",
+        "name": "DNACAuthHeader",
+        "type": "datatype.string",
+        "is_required": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01983KWGHHKLN3eZihtYlF3HI1kCzMD0eeR",
+    "definition_workflow_01983JGC4KGDM1WiBmnMPm8WUpFhhCLYMMo",
+    "definition_workflow_01984APTJ7DSY3WXcRTxqAUEk4DwjcrS4PW",
+    "definition_workflow_01987B3JVM7IT5mi3lVhBifmc91LbQxYvox",
+    "definition_workflow_01982N39SNXOM4Lbgu2T0XXGRso7e1PEfzl",
+    "definition_workflow_019836W6BE0O92Yc4MUmSQwFGqWEMdWg0la",
+    "definition_workflow_01gqyTHPD08j1eVYCGuBK1NbkvK88O5zd",
+    "definition_workflow_0198793019R7O4SplA5QPhFn2f8OtXnIvee",
+    "definition_workflow_01gR6CfY6nxqLKBHMJ5Gnt8GPimTCxYVk",
+    "definition_workflow_019804MTJ0P1K6defkL64mbn5n115Oy9emQ",
+    "definition_workflow_01982RRC4VQHV788tdxwEGCaNSPp7QyqzS6",
+    "definition_workflow_019821YPAVB9A5HdopsHxdsnI5IYGVee1yO",
+    "definition_workflow_01981UNWVNMB11bszAjYeHLvM4vPKvpQlUT",
+    "definition_workflow_01982HX1WCER06wE4dSRXqwZDrZCoaGvV8C",
+    "definition_workflow_01987K6KD6FVQ4HgIs5ySPVOOdiwoFFAwFu",
+    "definition_workflow_01980SRTRLHI577wYFCuSHy60TZQzCgbYZL",
+    "definition_workflow_01987FZ5I04MJ0pfgEuHDbmc31b6Bj30F9U",
+    "definition_workflow_01981PIP1QQ7W6oJPwbliUbWdogB0MEE6rR",
+    "definition_workflow_01982Y7XTB5QT1QNBTBRJYICxzxw1InkCwP"
+  ]
+}
