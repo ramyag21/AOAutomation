@@ -27,15 +27,20 @@
     "object_type": "definition_workflow",
     "actions": [
       {
-        "unique_name": "definition_activity_01ABESJQZCD731U8WPBFEGHz79j9oazaN62",
-        "name": "Sleep",
-        "title": "Sleep",
-        "type": "core.sleep",
+        "unique_name": "definition_activity_01ABFDHS9MHKY4sYu07LLREqq6s8IIMQow0",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
         "base_type": "activity",
         "properties": {
           "continue_on_failure": false,
-          "display_name": "Sleep",
-          "skip_execution": false
+          "display_name": "Set Variables",
+          "skip_execution": false,
+          "variables_to_update": [
+            {
+              "variable_to_update": "$global.variable_01724IWM3ZNJR4BwLq33PzcUG0sKgAbfCOx.global.variable_01724IWM3ZNJR4BwLq33PzcUG0sKgAbfCOx$"
+            }
+          ]
         },
         "object_type": "definition_activity"
       }
@@ -43,5 +48,59 @@
     "categories": [
       "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
+  },
+  "variables": {
+    "variable_01724IWM3ZNJR4BwLq33PzcUG0sKgAbfCOx": {
+      "unique_name": "variable_01724IWM3ZNJR4BwLq33PzcUG0sKgAbfCOx",
+      "schema_id": "tabletype_01724ERY4VHVY1qRkdaFYfNYip34DFGid2l",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "ACCOUNTKEYNAME": "HTTP Action",
+              "METHOD": "POST",
+              "PAYLOAD": "{   \"schema_id\": \"015DULFLZ3O6Z2eF8CSgWas9LhI2RstkZTr\",   \"name\": \"AM HTTP Basic Authentication\",   \"properties\": {     \"display_name\": \"AM HTTP Basic Authentication\",     \"basic_username\": \"root\",     \"basic_password\": \"control\"   } }",
+              "RElATIVEPATH": "be-console/api/v1/runtime_users"
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "AccountKey Test",
+        "type": "datatype.table",
+        "is_required": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "table_types": {
+    "tabletype_01724ERY4VHVY1qRkdaFYfNYip34DFGid2l": {
+      "unique_name": "tabletype_01724ERY4VHVY1qRkdaFYfNYip34DFGid2l",
+      "data_type": "datatype.tabletype",
+      "display_name": "AccountKey Test",
+      "columns": [
+        {
+          "name": "ACCOUNTKEYNAME",
+          "title": "ACCOUNTKEY NAME",
+          "type": "string"
+        },
+        {
+          "name": "METHOD",
+          "title": "METHOD",
+          "type": "string"
+        },
+        {
+          "name": "PAYLOAD",
+          "title": "PAYLOAD",
+          "type": "string"
+        },
+        {
+          "name": "RElATIVEPATH",
+          "title": "RELATIVEPATH",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
   }
 }
