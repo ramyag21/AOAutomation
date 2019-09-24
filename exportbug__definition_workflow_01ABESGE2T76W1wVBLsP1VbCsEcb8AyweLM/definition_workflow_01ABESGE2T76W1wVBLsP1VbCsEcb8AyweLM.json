@@ -43,6 +43,51 @@
           ]
         },
         "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01ABFEZ65AXQE2FCGYYdfhulrQP2M2yUxbO",
+        "name": "NK NEXTG-12744 Set Variables action switch Variable Type",
+        "title": "NK NEXTG-12744 Set Variables action switch Variable Type",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "display_name": "NK NEXTG-12744 Set Variables action switch Variable Type",
+          "input": {
+            "variable_workflow_0188AFXY1O7291BuZwIqFwGl81KRyv5Anjq": "",
+            "variable_workflow_0188AJIEPMZ4K5YWwgWKZRJ2kerYpHNd3pJ": "0001-01-01T00:00:00+00:00",
+            "variable_workflow_018ZE6HTNAOMF0BcFglkzCTM2dMgxyJ1Xfo": true,
+            "variable_workflow_018ZE7N9S0KJC5Mw0SBwj8HYZtcxqTsfnDa": null,
+            "variable_workflow_018ZE8INOFLWC0Y1YJavpc8K6ToVuWvxgx9": null,
+            "variable_workflow_018ZE98WIHEQD73ODluj1C7odFt1tSSUiYQ": "",
+            "variable_workflow_018ZEAOQU263H49xB1mXGoq9F2rbsVg3HBH": null
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "no_target": true
+          },
+          "workflow_id": "definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01ABFF2RKCJ5129Gn49lBrDHCz9M3MNso2A",
+        "name": "TN - Set Variable",
+        "title": "TN - Set Variable",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "display_name": "TN - Set Variable",
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "no_target": true
+          },
+          "workflow_id": "definition_workflow_0196RZXLMH4VA4yABxv1nwQuzTMUme7tAMu"
+        },
+        "object_type": "definition_activity"
       }
     ],
     "categories": [
@@ -73,6 +118,21 @@
     }
   },
   "table_types": {
+    "tabletype_015HW0ZNDM5R77imTIlu5mTQthPvNLfmT8Q": {
+      "unique_name": "tabletype_015HW0ZNDM5R77imTIlu5mTQthPvNLfmT8Q",
+      "data_type": "datatype.tabletype",
+      "display_name": "TN - TableString",
+      "columns": [
+        {
+          "maxLength": 100,
+          "name": "Output",
+          "title": "OutputString",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
     "tabletype_01724ERY4VHVY1qRkdaFYfNYip34DFGid2l": {
       "unique_name": "tabletype_01724ERY4VHVY1qRkdaFYfNYip34DFGid2l",
       "data_type": "datatype.tabletype",
@@ -101,6 +161,418 @@
       ],
       "base_type": "datatype",
       "object_type": "tabletype"
+    },
+    "tabletype_018SMOM5UT1G0798Hl6DiDWp480ZFbq1HOv": {
+      "unique_name": "tabletype_018SMOM5UT1G0798Hl6DiDWp480ZFbq1HOv",
+      "data_type": "datatype.tabletype",
+      "display_name": "NK TableType1",
+      "columns": [
+        {
+          "name": "Gender",
+          "title": "Gender",
+          "type": "string"
+        },
+        {
+          "name": "ID",
+          "title": "ID",
+          "type": "integer"
+        },
+        {
+          "name": "Locale",
+          "title": "Locale",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "title": "Name",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
     }
-  }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_0196RZXLMH4VA4yABxv1nwQuzTMUme7tAMu",
+        "name": "TN - Set Variable",
+        "title": "TN - Set Variable",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "local",
+              "name": "string",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_0196S0DVWDFZL1qPiSoQuQyGtcupR4gNMXR",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "value": 0,
+              "scope": "local",
+              "name": "intergers",
+              "type": "datatype.integer",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_0197M90ZGBQQC2GKrUfbZp85SoQRxqStJU1",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_015HW0ZNDM5R77imTIlu5mTQthPvNLfmT8Q",
+            "properties": {
+              "scope": "local",
+              "name": "stringTable",
+              "type": "datatype.table",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_0197M9WFT7P786jHDZXLOxfwyPK60TleAwO",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "TN - Set Variable",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "specify_on_workflow_start": false,
+            "target_default": true
+          },
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "specify_on_workflow_start": false
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_0196S074D8JXH3sB1yTpb5oisdcsOawhNqd",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_0196RZXLMH4VA4yABxv1nwQuzTMUme7tAMu.local.variable_workflow_0197M90ZGBQQC2GKrUfbZp85SoQRxqStJU1$",
+                  "variable_value_new": 99
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_0197M9ZFDBWW26OyW8zBdWZ9qx4zuDMaXkJ",
+            "name": "Add Row to Table",
+            "title": "Add Row to Table",
+            "type": "core.addrowtotable",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Add Row to Table",
+              "input_table": "$workflow.definition_workflow_0196RZXLMH4VA4yABxv1nwQuzTMUme7tAMu.local.variable_workflow_0197M9WFT7P786jHDZXLOxfwyPK60TleAwO$",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    },
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD",
+        "name": "NK NEXTG-12744 Set Variables action switch Variable Type",
+        "title": "NK NEXTG-12744 Set Variables action switch Variable Type",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.date",
+            "properties": {
+              "value": "0001-01-01T00:00:00+00:00",
+              "scope": "input",
+              "name": "DateTimeInput",
+              "type": "datatype.date",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_0188AJIEPMZ4K5YWwgWKZRJ2kerYpHNd3pJ",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.date",
+            "properties": {
+              "value": "0001-01-01T00:00:00+00:00",
+              "scope": "output",
+              "name": "DateTimeOutput",
+              "type": "datatype.date",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_0188AJR1N0JUV7gTSMZs6ASJWWQIYM1h8uW",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.boolean",
+            "properties": {
+              "value": false,
+              "scope": "output",
+              "name": "BooleanOutput",
+              "type": "datatype.boolean",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_018ZE6UVO3HNF0ttSzFU6gim7senzTruv8o",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "output",
+              "name": "SecureStringOutput",
+              "type": "datatype.secure_string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_018ZE9HAAG8O72zZRyawXU9VBAU8xpDqdWo",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.number",
+            "properties": {
+              "scope": "output",
+              "name": "DecimalOutput",
+              "type": "datatype.number",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_018ZE7YRWEELO1fCBUGxmMM18cAxuOWcVR2",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_018SMOM5UT1G0798Hl6DiDWp480ZFbq1HOv",
+            "properties": {
+              "value": [
+                {
+                  "column_data": {
+                    "Gender": "Male",
+                    "ID": 1,
+                    "Locale": "Eng",
+                    "Name": "Nagi"
+                  }
+                },
+                {
+                  "column_data": {
+                    "Gender": "Male",
+                    "ID": 2,
+                    "Locale": "Fre",
+                    "Name": "Giri"
+                  }
+                },
+                {
+                  "column_data": {
+                    "Gender": "Female",
+                    "ID": 3,
+                    "Locale": "Ger",
+                    "Name": "Siri"
+                  }
+                }
+              ],
+              "scope": "input",
+              "name": "TableTypeInput",
+              "type": "datatype.table",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_018ZEAOQU263H49xB1mXGoq9F2rbsVg3HBH",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "scope": "output",
+              "name": "IntegerOutput",
+              "type": "datatype.integer",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_018ZE8VQZ6WGH3w4AQodzbTtcABRpQ1S8Rf",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "StringOutput",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_0188AG93TO51R4SxyRGs1tUpGz7aM1EaUoF",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.boolean",
+            "properties": {
+              "value": true,
+              "scope": "input",
+              "name": "BooleanInput",
+              "type": "datatype.boolean",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_018ZE6HTNAOMF0BcFglkzCTM2dMgxyJ1Xfo",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.secure_string",
+            "properties": {
+              "value": "*****",
+              "scope": "input",
+              "name": "SecureStringInput",
+              "type": "datatype.secure_string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_018ZE98WIHEQD73ODluj1C7odFt1tSSUiYQ",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.number",
+            "properties": {
+              "scope": "input",
+              "name": "DecimalInput",
+              "type": "datatype.number",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_018ZE7N9S0KJC5Mw0SBwj8HYZtcxqTsfnDa",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_018SMOM5UT1G0798Hl6DiDWp480ZFbq1HOv",
+            "properties": {
+              "value": [
+                {
+                  "column_data": {
+                    "Gender": "M",
+                    "ID": 10,
+                    "Locale": "Arab",
+                    "Name": "Hayath"
+                  }
+                }
+              ],
+              "scope": "output",
+              "name": "TableTypeOutput",
+              "type": "datatype.table",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_018ZEBBCNPP4H0FCI4hTOABta77YTXAzyGA",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "input",
+              "name": "StringInput",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_0188AFXY1O7291BuZwIqFwGl81KRyv5Anjq",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.integer",
+            "properties": {
+              "scope": "input",
+              "name": "IntegerInput",
+              "type": "datatype.integer",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_018ZE8INOFLWC0Y1YJavpc8K6ToVuWvxgx9",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "NK NEXTG-12744 Set Variables action switch Variable Type",
+          "favorite": false,
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "specify_on_workflow_start": false,
+            "target_default": true
+          },
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "specify_on_workflow_start": false
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_0188ADKI1LCJG737LiMlDHJBC80VLnChEnd",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.output.variable_workflow_0188AG93TO51R4SxyRGs1tUpGz7aM1EaUoF$",
+                  "variable_value_new": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.input.variable_workflow_0188AFXY1O7291BuZwIqFwGl81KRyv5Anjq$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.output.variable_workflow_018ZE6UVO3HNF0ttSzFU6gim7senzTruv8o$",
+                  "variable_value_new": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.input.variable_workflow_018ZE6HTNAOMF0BcFglkzCTM2dMgxyJ1Xfo$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.output.variable_workflow_0188AJR1N0JUV7gTSMZs6ASJWWQIYM1h8uW$",
+                  "variable_value_new": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.input.variable_workflow_0188AJIEPMZ4K5YWwgWKZRJ2kerYpHNd3pJ$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.output.variable_workflow_018ZE7YRWEELO1fCBUGxmMM18cAxuOWcVR2$",
+                  "variable_value_new": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.input.variable_workflow_018ZE7N9S0KJC5Mw0SBwj8HYZtcxqTsfnDa$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.output.variable_workflow_018ZE8VQZ6WGH3w4AQodzbTtcABRpQ1S8Rf$",
+                  "variable_value_new": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.input.variable_workflow_018ZE8INOFLWC0Y1YJavpc8K6ToVuWvxgx9$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.output.variable_workflow_018ZE9HAAG8O72zZRyawXU9VBAU8xpDqdWo$",
+                  "variable_value_new": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.input.variable_workflow_018ZE98WIHEQD73ODluj1C7odFt1tSSUiYQ$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.output.variable_workflow_018ZEBBCNPP4H0FCI4hTOABta77YTXAzyGA$",
+                  "variable_value_new": "$workflow.definition_workflow_0188ACUQYVFHM4c8ireS3nWY1OM4vZl5pHD.input.variable_workflow_018ZEAOQU263H49xB1mXGoq9F2rbsVg3HBH$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ]
 }
