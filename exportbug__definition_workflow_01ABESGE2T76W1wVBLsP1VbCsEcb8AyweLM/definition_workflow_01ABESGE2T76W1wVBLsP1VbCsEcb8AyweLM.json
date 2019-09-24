@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_01ABESGE2T76W1wVBLsP1VbCsEcb8AyweLM",
-    "name": "RG export bug ",
-    "title": "RG export bug ",
+    "name": "RG export bug1",
+    "title": "RG export bug1",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": null,
@@ -11,7 +11,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "RG export bug ",
+      "display_name": "RG export bug1",
       "runtime_user": {
         "override_target_runtime_user": false,
         "specify_on_workflow_start": false,
