@@ -1,0 +1,352 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_016BKJFWFRZ3Z2m7UdS1jinJfhmIZTOkIwL",
+    "name": "RG DNAC1",
+    "title": "RG DNAC1",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "str",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_016DBFZ2V9OQM0zKs229NHG3titGm2mIBMX",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "scope": "local",
+          "name": "WF Int",
+          "type": "datatype.integer",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_016DBG3MSJ5A04IWOixqAImSJtvdYMjsb7B",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.boolean",
+        "properties": {
+          "value": false,
+          "scope": "local",
+          "name": "bool",
+          "type": "datatype.boolean",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_016DBFSXG9QQA6HC7tYRnaeyx3cLJe80xXV",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG DNAC1",
+      "favorite": false,
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_workflow_target": true
+      },
+      "timeout": 3600
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_018001EQHO6KM3pK9f6cFvXZaa4IauTf8Ip",
+        "name": "Get Device Config for all Devices - New",
+        "title": "Get Device Config for all Devices - New",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device Config for all Devices - New",
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "execute_on_this_target": true,
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_015VZZAV3E9LQ2Gjc5SVIP1CfVMQgEuGx2G"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019C37V34KDVK2qbPDn6uhfR8GvMjfUdp9n",
+        "name": "Get Device Config for all Devices",
+        "title": "Get Device Config for all Devices",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device Config for all Devices",
+          "input": {
+            "variable_workflow_01983KX1ABSBF4VIlFqh54EIRIczw2CxXLy": "$workflow.definition_workflow_016BKJFWFRZ3Z2m7UdS1jinJfhmIZTOkIwL.local.variable_workflow_016DBFZ2V9OQM0zKs229NHG3titGm2mIBMX$"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01GL3E0xdaYZXuqMRV4Hh7u3Q0xvhcQBc",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294"
+          },
+          "workflow_id": "definition_workflow_01983KWGHHKLN3eZihtYlF3HI1kCzMD0eeR"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_018001C9I19EM33w7smb4VUiljeaHmjEEih",
+        "name": "Get Device Config for all Devices",
+        "title": "Get Device Config for all Devices",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device Config for all Devices",
+          "input": {},
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "execute_on_this_target": true,
+            "no_target": false,
+            "override_workflow_target": false,
+            "target_id": "definition_target_01GL3E0xdaYZXuqMRV4Hh7u3Q0xvhcQBc",
+            "target_type": "web-service.endpoint",
+            "use_workflow_target": false
+          },
+          "workflow_id": "definition_workflow_016BD3X4Q0UD41CaqrwHt1uGcdQQ27z0Ril"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_018001DHSE4JL2j9wq1nMHhqb1pJSjv1oyY",
+        "name": "Get Device Config By ID",
+        "title": "Get Device Config By ID",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Device Config By ID",
+          "input": {
+            "variable_workflow_01gR4UJwVzLN9xXNr50Jp0cJicTwtFWgJ": "$activity.definition_activity_018001EQHO6KM3pK9f6cFvXZaa4IauTf8Ip.output.variable_workflow_015W03YH1UWU9303LRiFTvU37P0mSkAOVPS[0].deviceId$"
+          },
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "execute_on_this_target": false,
+            "no_target": false,
+            "override_workflow_target": false,
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01gR4lfJmhpckJUcbSH74Sos81RhkCgSP"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_016CFI19LN7491b0MwAHKlm2nIfrGjvhYXN",
+        "name": "Get Polling interval for all devices",
+        "title": "Get Polling interval for all devices",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "atomic": {
+            "atomic_group": "Cisco DNA Center",
+            "is_atomic": true
+          },
+          "continue_on_failure": false,
+          "delete_workflow_instance": false,
+          "description": "this atomic get polling interval details for all devices",
+          "display_name": "Get Polling interval for all devices",
+          "favorite": false,
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01gqY6TWdjK4B2SYeQyXkLof2jcKG9Lps"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_016E61AO5W1SJ6nFzZNOgOskAPfNzrYYbhf",
+        "name": "Completed",
+        "title": "Completed",
+        "type": "logic.completed",
+        "base_type": "activity",
+        "properties": {
+          "completion_type": "succeeded",
+          "display_name": "Completed"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_016DFXYEEPL0Q5nWb68Rqyzd14pxudL6sn4",
+        "name": "Get Device Config for all Devices",
+        "title": "Get Device Config for all Devices",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "atomic": {
+            "atomic_group": "Atomic Workflows",
+            "is_atomic": true
+          },
+          "continue_on_failure": false,
+          "delete_workflow_instance": false,
+          "description": "This atomic workflow retrieves network device's ids",
+          "display_name": "Get Device Config for all Devices",
+          "favorite": false,
+          "input": {},
+          "target": {
+            "execute_on_this_target": false,
+            "execute_on_workflow_target": true,
+            "no_target": false,
+            "override_workflow_target": false,
+            "target_id": "definition_target_01GL3E0xdaYZXuqMRV4Hh7u3Q0xvhcQBc",
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294",
+            "use_workflow_target": false
+          },
+          "timeout": 3600,
+          "workflow_id": "definition_workflow_016BD3X4Q0UD41CaqrwHt1uGcdQQ27z0Ril"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_016DFY3WRJ58O4kmM7buwCqnkS7GdYyutZY",
+        "name": "Get Access Token",
+        "title": "Get Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "atomic": {
+            "atomic_group": "Cisco DNA Center",
+            "is_atomic": true
+          },
+          "continue_on_failure": false,
+          "delete_workflow_instance": false,
+          "display_name": "Get Access Token",
+          "favorite": false,
+          "input": {},
+          "target": {
+            "execute_on_this_target": false,
+            "no_target": false,
+            "override_workflow_target": false,
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294",
+            "use_workflow_target": true
+          },
+          "timeout": 3600,
+          "workflow_id": "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_016DFY6GCGP767E8jt5YejiEtHTjpvdZCpi",
+        "name": "Get Device Config Count",
+        "title": "Get Device Config Count",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "atomic": {
+            "atomic_group": "Cisco DNA Center",
+            "is_atomic": true
+          },
+          "continue_on_failure": false,
+          "delete_workflow_instance": false,
+          "description": "this atomic get details of device config count",
+          "display_name": "Get Device Config Count",
+          "favorite": false,
+          "input": {},
+          "target": {
+            "execute_on_this_target": false,
+            "no_target": false,
+            "override_workflow_target": false,
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294",
+            "use_workflow_target": true
+          },
+          "timeout": 3600,
+          "workflow_id": "definition_workflow_01gR016GzugPB1oaTBATIkBPwJzTLbDSb"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01GL3E0xdaYZXuqMRV4Hh7u3Q0xvhcQBc": {
+      "unique_name": "definition_target_01GL3E0xdaYZXuqMRV4Hh7u3Q0xvhcQBc",
+      "name": " vCenter Server - aus-65esxvc-01 ",
+      "title": " vCenter Server - aus-65esxvc-01 ",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01GL392jsVQARIRHOoEdfDPzDJzzwh12H",
+        "disable_certificate_validation": true,
+        "display_name": " vCenter Server - aus-65esxvc-01 ",
+        "host": "10.88.102.41",
+        "no_runtime_user": false,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01GL392jsVQARIRHOoEdfDPzDJzzwh12H": {
+      "unique_name": "definition_runtime_user_01GL392jsVQARIRHOoEdfDPzDJzzwh12H",
+      "name": "aus-65esxvc-01 user",
+      "title": "aus-65esxvc-01 user",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "aus-65esxvc-01 user"
+      }
+    }
+  },
+  "variables": {
+    "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF": {
+      "unique_name": "variable_01gqxid4jgGlfDDvAH3b5EoSsUusGw4YF",
+      "properties": {
+        "value": "X-Auth-Token",
+        "scope": "global",
+        "name": "DNACAuthHeader",
+        "type": "datatype.string",
+        "is_required": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_015VZZAV3E9LQ2Gjc5SVIP1CfVMQgEuGx2G",
+    "definition_workflow_01gR4lfJmhpckJUcbSH74Sos81RhkCgSP",
+    "definition_workflow_01gqY6TWdjK4B2SYeQyXkLof2jcKG9Lps",
+    "definition_workflow_01gR016GzugPB1oaTBATIkBPwJzTLbDSb",
+    "definition_workflow_01983KWGHHKLN3eZihtYlF3HI1kCzMD0eeR",
+    "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi",
+    "definition_workflow_016BD3X4Q0UD41CaqrwHt1uGcdQQ27z0Ril"
+  ]
+}
