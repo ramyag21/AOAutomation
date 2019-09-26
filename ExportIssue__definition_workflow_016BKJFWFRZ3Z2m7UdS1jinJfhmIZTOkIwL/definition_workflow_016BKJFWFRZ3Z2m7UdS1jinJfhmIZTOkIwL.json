@@ -1,23 +1,11 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_016BKJFWFRZ3Z2m7UdS1jinJfhmIZTOkIwL",
-    "name": "RG DNAC1",
-    "title": "RG DNAC1",
+    "name": "RG DNAC2",
+    "title": "RG DNAC2",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "local",
-          "name": "str",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_016DBFZ2V9OQM0zKs229NHG3titGm2mIBMX",
-        "object_type": "variable_workflow"
-      },
       {
         "schema_id": "datatype.integer",
         "properties": {
@@ -40,6 +28,18 @@
         },
         "unique_name": "variable_workflow_016DBFSXG9QQA6HC7tYRnaeyx3cLJe80xXV",
         "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "str",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_016DBFZ2V9OQM0zKs229NHG3titGm2mIBMX",
+        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -47,7 +47,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "RG DNAC1",
+      "display_name": "RG DNAC2",
       "favorite": false,
       "runtime_user": {
         "override_target_runtime_user": false,
@@ -341,12 +341,12 @@
     }
   },
   "atomic_workflows": [
+    "definition_workflow_016BD3X4Q0UD41CaqrwHt1uGcdQQ27z0Ril",
     "definition_workflow_015VZZAV3E9LQ2Gjc5SVIP1CfVMQgEuGx2G",
+    "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi",
+    "definition_workflow_01gR016GzugPB1oaTBATIkBPwJzTLbDSb",
     "definition_workflow_01gR4lfJmhpckJUcbSH74Sos81RhkCgSP",
     "definition_workflow_01gqY6TWdjK4B2SYeQyXkLof2jcKG9Lps",
-    "definition_workflow_01gR016GzugPB1oaTBATIkBPwJzTLbDSb",
-    "definition_workflow_01983KWGHHKLN3eZihtYlF3HI1kCzMD0eeR",
-    "definition_workflow_0152CDDIM1G7G72w1hEDpy9uFxIaCdAGcEi",
-    "definition_workflow_016BD3X4Q0UD41CaqrwHt1uGcdQQ27z0Ril"
+    "definition_workflow_01983KWGHHKLN3eZihtYlF3HI1kCzMD0eeR"
   ]
 }
