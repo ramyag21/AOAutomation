@@ -1,0 +1,196 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01AD4VJ18IKPT0d6p20bvEmuXJOldu8Nkec",
+    "name": "RG vmware",
+    "title": "RG vmware",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG vmware",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01ADXHMFDXRLQ6808iGZySQbwVskTCkRr18",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01AD4WDCFT98G1qJlciFBWDxIpfd0GB4w4a",
+        "name": "Get Cluster Details",
+        "title": "Get Cluster Details",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Cluster Details",
+          "input": {
+            "variable_workflow_01GOMAvQut0LKD5wco3qupOdCjqu9cNty": "CF-INFRA-1"
+          },
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01GOM2W92fh6RWB6pdoZgQL5rJxVbsDJb"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01AD4WL6YF3HF0iZvC00JEckdb3mUNCMecn",
+        "name": "Get Clusters",
+        "title": "Get Clusters",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Clusters",
+          "input": {
+            "variable_workflow_01GOKEoBparNiETkZa2oK5uVDsXr9RWTm": ""
+          },
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01GOiO0HL6RFRyDMTpNMy09wJEVNWLQcS"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01AD4WRWPC8BW4TWefehhLFA7rAUsvEMDCI",
+        "name": "Get Datastore Details",
+        "title": "Get Datastore Details",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Datastore Details",
+          "input": {
+            "variable_workflow_01GyWTZjPanYMvIyfyChLMA9eYCPti9ig": ""
+          },
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01GOXjuErgw3fXYwvsV9tdVTyAqidCetg"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01AD5F4285HAV3WaWDASUZm7Og0ZBHw1Ga2",
+        "name": "Get Datastores",
+        "title": "Get Datastores",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Datastores",
+          "input": {
+            "variable_workflow_01GywGhiLJrwt8jN1kwRd2GwoAkYkCPDy": ""
+          },
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01GOVMpZRZSYKsPyfUyAGUxeplhkxtAYo"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01AD5F8RLGFU82O8cOvgjf8PuQvWt8yoPse",
+        "name": "Get Folders",
+        "title": "Get Folders",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Folders",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "target_type": "015DULNZPRPXL75j7VwzfjmQQp6RgAHt294",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01GOrDWL4ca4vzB93QOnGxiE7ehrxCJHJ"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01ADXHMFDXRLQ6808iGZySQbwVskTCkRr18": {
+      "unique_name": "definition_target_01ADXHMFDXRLQ6808iGZySQbwVskTCkRr18",
+      "name": "RG vmware ast-60",
+      "title": "RG vmware ast-60",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01ADXGVCZOYF22Db7bdkADtvIaEzCpWofXu",
+        "disable_certificate_validation": true,
+        "display_name": "RG vmware ast-60",
+        "host": "ast-60esxvc-02.tidalsoft.local",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01ADXGVCZOYF22Db7bdkADtvIaEzCpWofXu": {
+      "unique_name": "definition_runtime_user_01ADXGVCZOYF22Db7bdkADtvIaEzCpWofXu",
+      "name": "tidalsoft\\ramygane",
+      "title": "tidalsoft\\ramygane",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "tidalsoft\\ramygane"
+      }
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01GOiO0HL6RFRyDMTpNMy09wJEVNWLQcS",
+    "definition_workflow_01GOM2W92fh6RWB6pdoZgQL5rJxVbsDJb",
+    "definition_workflow_01GOXjuErgw3fXYwvsV9tdVTyAqidCetg",
+    "definition_workflow_01GOVMpZRZSYKsPyfUyAGUxeplhkxtAYo",
+    "definition_workflow_01GOrDWL4ca4vzB93QOnGxiE7ehrxCJHJ"
+  ]
+}
