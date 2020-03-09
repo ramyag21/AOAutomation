@@ -1,0 +1,2221 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u",
+    "name": "RG Kafka Trigger Automation",
+    "title": "RG Kafka Trigger Automation",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "tabletype_01E591O5W60KD3z44gnmNeTIuEnuLa3hAxE",
+        "properties": {
+          "scope": "local",
+          "name": "Test Cases",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "action_timeout": 180,
+      "atomic": {
+        "is_atomic": false
+      },
+      "continue_on_failure": false,
+      "delete_workflow_instance": false,
+      "display_name": "RG Kafka Trigger Automation",
+      "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.01E58UTATTNB20dKEdpuxAqMSuq4CFsM1Vm$",
+      "row": [
+        {
+          "key": "TestScenarios",
+          "type": "string",
+          "value": "SSL Enabled No Auth"
+        },
+        {
+          "key": "TestStatus",
+          "type": "string",
+          "value": "Failed"
+        }
+      ],
+      "skip_execution": false,
+      "target": {
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01E4J1PJ7PKVN1E0Hy98TgSwVZBW95uwkdn",
+          "run_on_all_targets": false,
+          "selected_target_types": [
+            "kafka.endpoint"
+          ],
+          "use_criteria": {
+            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+            "conditions": [
+              {
+                "operator": "eq",
+                "left_operand": "$targetgroup.kafka endpoint.input.description$",
+                "right_operand": "RG dummy kafka"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01E3LL4D28QYO2Gj8kraTNiZIxHcaXUsVvm",
+        "name": "Group",
+        "title": "Create Certificate accountkeys and Target",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Create Certificate accountkeys and Target",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E3LJXPDBWVZ69tdgVN4GgYPAyy2NiwvE1",
+            "name": "Generic CCS API Request",
+            "title": "Create kafka Certificate Accountkeys",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"type\": \"runtime_user.kafka_certificate_credentials\",\n  \"base_type\": \"runtime_user\",\n  \"name\": \"RG Kafka CertificateBased keys $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"title\": \"RG Kafka CertificateBased keys $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"properties\": {\n    \"display_name\": \"RG Kafka CertificateBased Keys $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n    \"crt\": \"-----BEGIN CERTIFICATE-----\\nMIIDiTCCAnECCQCfspoDtHu6tTANBgkqhkiG9w0BAQsFADCBlzELMAkGA1UEBhMC\\nVVMxCzAJBgNVBAgMAlRYMRMwEQYDVQQHDApSaWNoYXJkc29uMQ4wDAYDVQQKDAVD\\naXNjbzENMAsGA1UECwwEQ1BTRzElMCMGA1UEAwwccm9uLWthZmthLTAxLnRpZGFs\\nc29mdC5sb2NhbDEgMB4GCSqGSIb3DQEJARYRcm9ueW91bkBjaXNjby5jb20wHhcN\\nMTgwNjI2MjAwMTM1WhcNMjgwNjI2MjAwMTM1WjB1MQswCQYDVQQGEwJVUzELMAkG\\nA1UECBMCVFgxEzARBgNVBAcTClJpY2hhcmRzb24xDjAMBgNVBAoTBUNpc2NvMQ0w\\nCwYDVQQLEwRDUFNHMSUwIwYDVQQDExxyb24ta2Fma2EtMDEudGlkYWxzb2Z0Lmxv\\nY2FsMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtOaTGa3Jq5rwXRVA\\n/ZFFcv4CSUNlmriC/+teMkaUmjX5rHQ6gnvw0I/ar+Sx8hyGL0hqTCoOh2qqUZgk\\n+S2c7X1TI7WBhmXsYPmuV8Qxv16Z3IqAMbDgrs6ZN61D9WN+2waVR/F0PXAvQukn\\nRay6a2X99CuMg/pkl66jsWWSkRXUzS5rl2rQpunAHIZh2x2S/LACSbSdOTr1Jgil\\nNPg0r754Scm9Oy/GukKgkkEBRnGFrHDHaS/O+IovH3dXGhPM26zmA4yYc7Nt8o31\\nmqoOiat+HtPjivbjkr0O4PRY4GlGu7gpmsT3pcU568kON5ML+3qoO/42yAcSzR/w\\ne63a6wIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQC5hkVhKY7Wn206PHE3323mNxm5\\nxd9UjqRBlE5ZT2/32zkmw/NS9WSvulJmhKdYEugxhHp4IvKZKnLLnawrFD1r54Cz\\nfP/w8hvKhGNWFHzv1cYGqm0Wbn4y80hriaJib2vI8ez/V544lms1/AhO2vylC1Zh\\nOONUjZJdTkJzn796DW4iO2+EGd9YMXyjKH9xpYAalaKGWZSY6RPERvc8rysW4xcr\\ny5TjpsJggNxPPQQRJompQXbOtWDOOgP0M0D+4+MgltCekOL1WojjPwfptRJjdqqw\\nXRhebn8l4UIaNhi/pSYyCumbnSM71S6enliFGgD/LGsP/r/9+u9OM8VlWkXZ\\n-----END CERTIFICATE-----\\n\",\n    \"key\": \"Bag Attributes\\n    friendlyName: localhost\\n    localKeyID: 54 69 6D 65 20 31 35 38 32 33 30 32 32 35 30 38 37 38 \\nKey Attributes: \u003cNo Attributes\u003e\\n-----BEGIN PRIVATE KEY-----\\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC05pMZrcmrmvBd\\nFUD9kUVy/gJJQ2WauIL/614yRpSaNfmsdDqCe/DQj9qv5LHyHIYvSGpMKg6HaqpR\\nmCT5LZztfVMjtYGGZexg+a5XxDG/XpncioAxsOCuzpk3rUP1Y37bBpVH8XQ9cC9C\\n6SdFrLprZf30K4yD+mSXrqOxZZKRFdTNLmuXatCm6cAchmHbHZL8sAJJtJ05OvUm\\nCKU0+DSvvnhJyb07L8a6QqCSQQFGcYWscMdpL874ii8fd1caE8zbrOYDjJhzs23y\\njfWaqg6Jq34e0+OK9uOSvQ7g9FjgaUa7uCmaxPelxTnryQ43kwv7eqg7/jbIBxLN\\nH/B7rdrrAgMBAAECggEBAKNNFfNzX38rEdplalK8hh4FUNkEHz9pWtBdj54A+vqu\\nyOE11u+dpMkRY0+vOjeeKj+atmJlANKbpn6bwpyx4Vy96oRswC0r6xOrsQeHk4T2\\niBx/ZrP0wQ7sb4HERnnJRGXB7paQT+d6Ux+qy4npICv9WR/HBETLj20h+KEWWRXg\\nQ7ANPTalzomPQ3eHjZDHSU+lj5ovGl9J9qeMowRLvUyyk9I68KrvtDg3h8vzqSHk\\nFCvmMA6YZwxdpgC6PbiE7/47dSadprpIPCsE8pOfyIprtB5clya6kPcPHf9vsA0q\\nztvbN+l9/kQRpoCqChZs1LOgefGWgugCM1+xlwZ8mtECgYEA2u2Ho3r6IJ7972xa\\nlKE/MWneh+HXZblvVG9KVa+VTUVWYPrNmxJIa6a22rW7OZjPJ+td8J8UyUntI+gD\\nmcVsW3moZCvQP9i2okvu1irziSTHaLIy2XgO7oTLJrOOxHYv7gGkt+OLsICs/yxo\\n9G+3hsrbSdtc9FO1daw/EM49oekCgYEA04iTeQGp3bltU9HcxiiI3xeYB4z1PAqB\\nggKkCs9kB+Fr+GRGj7CUqJA8D9u8xPVaF+5Vk8VomNU/brSUeQOnuNHJXbTG/4Ws\\nBt8Zb7zUkF3vpdxe9yrDVVcOeYZVp1Rjwu4fdRrq/eB81pFZZiPtWh2BGhgoC2xm\\nTOPcb24kXbMCgYEAhhT3/63vx07Y42wPRfxDwbW/bqVo0IpzntjSRAxXeo2+y4KP\\nrivSYuwmDWlEE5B9P0utqxMjHezC6jzNB76cEKI/+anDz3ag1GGBE3YW1aXK41pQ\\nPlSDgJ2f9kH+bGCeFjy3b1BTW3RTf6zpUtuhIVLYXzGUiqdB+aHWtio6IRECgYAk\\nlf+jszT1A2g0UhzULRiXNVZ3H9seelax7NEAiaQsdMGe4YEOwyTDDsdEmuXITwM5\\nFmC4wTD5FhD1jcgMMiSlI6unSGgOs8jwG1Aj8k31djnHvxixuTS1ouv++sv/t+nV\\nQigwseoo5NXSqqsCrn4T0vyMTddHOoVrERIEN9GUXwKBgQCeI8DKm8ms+pQbGehL\\n3znaz9QD+cadigynenD95kuXR3nt3A7bfIhw/CUxjVJnyh6EOUZw7dIlalH3ufWD\\nmvBUoLfrxM7qF0tfQqBfUxlhtKBBvT23bVKOajYv7WZiYxc0AevTbDuC4cnHaINA\\nTgz68VQCvKGhUhuDOOzgZvh+lQ==\\n-----END PRIVATE KEY-----\\n\",\n    \"ca_crt\": \"-----BEGIN CERTIFICATE-----\\nMIIEAzCCAuugAwIBAgIJANZH+zYFoiL2MA0GCSqGSIb3DQEBCwUAMIGXMQswCQYD\\nVQQGEwJVUzELMAkGA1UECAwCVFgxEzARBgNVBAcMClJpY2hhcmRzb24xDjAMBgNV\\nBAoMBUNpc2NvMQ0wCwYDVQQLDARDUFNHMSUwIwYDVQQDDBxyb24ta2Fma2EtMDEu\\ndGlkYWxzb2Z0LmxvY2FsMSAwHgYJKoZIhvcNAQkBFhFyb255b3VuQGNpc2NvLmNv\\nbTAeFw0xODA2MjYxOTE5MzRaFw0yODA2MjYxOTE5MzRaMIGXMQswCQYDVQQGEwJV\\nUzELMAkGA1UECAwCVFgxEzARBgNVBAcMClJpY2hhcmRzb24xDjAMBgNVBAoMBUNp\\nc2NvMQ0wCwYDVQQLDARDUFNHMSUwIwYDVQQDDBxyb24ta2Fma2EtMDEudGlkYWxz\\nb2Z0LmxvY2FsMSAwHgYJKoZIhvcNAQkBFhFyb255b3VuQGNpc2NvLmNvbTCCASIw\\nDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMOiUAnansHVA9iyyWrIEaH+7v78\\nWH9sOjp2KmxBseLgohPNj511keM7xwZTHM1ede4/rVYXzIsG+fs/pMFz1BSsEjYT\\nbjaVX0X3EDaHBcZaKUPwh3XCzuVCsVb/NzLRyoBYbv1sBHRsbxm3pwMtSaa9Wdzt\\nlYVXrH+AkrYZH0X8czlt16s5Uke+qHgBedenUgNMEmqdbo3ERMmipAQv0pmyC+lQ\\nBB5uDdQnVqSMObSiyK5xfEp6X5eTbautcG8UUTvv0nw4Y7SPScdEQUPlU+Ln49Fm\\nUyZZTZSjkRDiaUDWLKKKJLUuRHUQB81dFazdi/eF23eyBwDDtNS+SSS5k18CAwEA\\nAaNQME4wHQYDVR0OBBYEFJPrY5tjuYaZwtV9DWxLbe2B9MbyMB8GA1UdIwQYMBaA\\nFJPrY5tjuYaZwtV9DWxLbe2B9MbyMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEL\\nBQADggEBAFr+ybXBVAzGSpsS2W42m7sPn7zI/890H0DYOSGLFhzctOr3YjTS/9wh\\nQJSALuqD+SfDIO5vB80leyXsmDXzQ9fMApAtOhT7NtK/jAPyO7OgxP/XkIae6VGD\\nhYTAGRyUV61hyQVsOPBKDz7Q9fTyxdEzbpzB9YNd+ZFDavudm4y2Dwyt2TcV5UPY\\nkmg1fHdtqLU9tXr1f2ehNiU/bVZlQb2BtLwhT8FRjv/Ebd6rR2I4uN9uxIlgEvsa\\ncZ+8qdCj6HNb+GllY1Xeo8YSLE5Wu0Mrxhla5p2bblDKxiPAKfZJFlM0AF3AOMir\\n+PN2ve5EX3AEQCzyHDw+AAKPjT4PxXQ=\\n-----END CERTIFICATE-----\\n\",\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n  }\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": false,
+              "display_name": "Create kafka Certificate Accountkeys",
+              "relative_url": "be-console/api/v1/runtime_users",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E3LJY23IFUR7TUyzRJUKvGr5zJt3SiVv3",
+            "name": "JSONPath Query",
+            "title": "Extracting Kafka Certificate accountkeys ID",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Extracting Kafka Certificate accountkeys ID",
+              "input_json": "$activity.definition_activity_01E3LJXPDBWVZ69tdgVN4GgYPAyy2NiwvE1.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..id",
+                  "jsonpath_query_name": "Accountkeys ID",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E3LJYCU6W342jexv6Bk8CIzcONefiO2sw",
+            "name": "Generic CCS API Request",
+            "title": "Create KafkaTarget with Certificates",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"name\": \"RG Kafka with Certificate $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"title\": \"RG Kafka with Certificate $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"description\": \"RG Automation Cert\",\n  \"properties\": {\n    \"disable_certificate_validation\": true,\n    \"no_runtime_user\": false,\n    \"port\": 9094,\n    \"ssl_enable\": true,\n    \"display_name\": \"RG Kafka with Certificate $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n    \"default_runtime_user_id\": \"$activity.definition_activity_01E3LJY23IFUR7TUyzRJUKvGr5zJt3SiVv3.output.jsonpath_queries.Accountkeys ID$\",\n    \"host\": \"10.88.38.124\"\n  },\n  \"type\": \"kafka.endpoint\",\n  \"base_type\": \"target\"\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": false,
+              "display_name": "Create KafkaTarget with Certificates",
+              "relative_url": "be-console/api/v1/targets",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4DTSSFK2XR7PvJcqxOlq6sfGOJCEWdY5",
+            "name": "JSONPath Query",
+            "title": "Extract Kafka Certificate Target ID",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Extract Kafka Certificate Target ID",
+              "input_json": "$activity.definition_activity_01E3LJYCU6W342jexv6Bk8CIzcONefiO2sw.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..id",
+                  "jsonpath_query_name": "TargetCertificateID",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E3LJWPKNPH25FInrwXVVYNmWB6S1jaRsI",
+        "name": "Group",
+        "title": "Create Targets with and Without SSL Enabled ",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Create Targets with and Without SSL Enabled ",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E3LJX0K637D1U5PHwzie5XZgVoPUPFoqx",
+            "name": "Generic CCS API Request",
+            "title": "Create Kafka Target with NO SSL and NO Authentiation",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"name\": \"RG KAFKA No SSL, NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"title\": \"RG KAFKA No SSL, NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"description\": \"RG Automation No SSL No Auth\",\n  \"properties\": {\n    \"disable_certificate_validation\": true,\n    \"no_runtime_user\": true,\n    \"port\": 9092,\n    \"ssl_enable\": false,\n    \"display_name\": \"RG KAFKA No SSL, NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n    \"host\": \"10.88.38.124\"\n  },\n  \"type\": \"kafka.endpoint\",\n  \"base_type\": \"target\"\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": false,
+              "display_name": "Create Kafka Target with NO SSL and NO Authentiation",
+              "relative_url": "be-console/api/v1/targets",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4DV8SQGEHB5N20IBeqxwbwYaJE6hgVH5",
+            "name": "JSONPath Query",
+            "title": "Extract Kafka No SSL No Auth Target ID",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Extract Kafka No SSL No Auth Target ID",
+              "input_json": "$activity.definition_activity_01E3LJX0K637D1U5PHwzie5XZgVoPUPFoqx.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..id",
+                  "jsonpath_query_name": "TargetNoSSLNoAuthID",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E3LJXCKODVE2lWAmc0O6jplDaqGiUz8bN",
+            "name": "Generic CCS API Request",
+            "title": "Create Kafka Target SSL ENABLED and NO Authentiation",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"name\": \"RG KAFKA With SSL, NO Authentiation $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"title\": \"RG KAFKA With SSL, NO Authentiation $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"description\": \"RG Automation SSL Enabled No Auth\",\n  \"properties\": {\n    \"disable_certificate_validation\": true,\n    \"no_runtime_user\": true,\n    \"port\": 9093,\n    \"ssl_enable\": true,\n    \"display_name\": \"RG KAFKA With SSL, NO Authentiation $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n    \"host\": \"10.88.38.124\"\n  },\n  \"type\": \"kafka.endpoint\",\n  \"base_type\": \"target\"\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": false,
+              "display_name": "Create Kafka Target SSL ENABLED and NO Authentiation",
+              "relative_url": "be-console/api/v1/targets",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4DVZK3VGRL537qxsIkflUBX6yIa1ESb2",
+            "name": "JSONPath Query",
+            "title": "Extract Kafka SSL ENABLED No Auth Target ID",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Extract Kafka SSL ENABLED No Auth Target ID",
+              "input_json": "$activity.definition_activity_01E3LJXCKODVE2lWAmc0O6jplDaqGiUz8bN.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..id",
+                  "jsonpath_query_name": "TargetSSLNoAuthID",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E4DCT75S7P54gkDE27YCUT5GtOxxr8IGz",
+        "name": "Group",
+        "title": "Create Kafka Event No SSL No Auth",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Create Kafka Event No SSL No Auth",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E4DRUAW059057Kq8hUVb6Q01jZhEL9NQa",
+            "name": "Generic CCS API Request",
+            "title": "Create Kafka Event - No SSL No Auth",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n   \"title\":\"RG Kafka Event No SSL No Auth$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n   \"target_id\":$activity.definition_activity_01E4DV8SQGEHB5N20IBeqxwbwYaJE6hgVH5.output.jsonpath_queries.TargetNoSSLNoAuthID$,\n   \"type\":\"kafka.event\",\n   \"base_type\":\"event\",\n   \"properties\":{\n      \"title\":\"RG Kafka Event No SSL No Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n      \"topic_name\":\"tl-kafka-topic\",\n      \"target_id\":$activity.definition_activity_01E4DV8SQGEHB5N20IBeqxwbwYaJE6hgVH5.output.jsonpath_queries.TargetNoSSLNoAuthID$,\n      \"conditions\":{\n         \"left_operand\":{\n            \"left_operand\":{\n               \"operator\":\"eq\",\n               \"left_operand\":\"[$output.headers[0].header_key$]\",\n               \"right_operand\":\"key1\"\n            },\n            \"right_operand\":{\n               \"left_operand\":\"[$output.headers[0].header_value$]\",\n               \"right_operand\":\"value1\",\n               \"operator\":\"eq\"\n            },\n            \"operator\":\"and\"\n         },\n         \"right_operand\":{\n            \"left_operand\":\"[$output.message$]\",\n            \"right_operand\":\"str*\",\n            \"operator\":\"mw\"\n         },\n         \"operator\":\"and\"\n      }\n   }\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": false,
+              "display_name": "Create Kafka Event - No SSL No Auth",
+              "relative_url": "be-console/api/v1/events",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4DYIJAYFW94YfN1GRW3QBdBfgNpTWbFI",
+            "name": "JSONPath Query",
+            "title": "Extract Event ID - No Auth No SSL",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extract Event ID - No Auth No SSL",
+              "input_json": "$activity.definition_activity_01E4DRUAW059057Kq8hUVb6Q01jZhEL9NQa.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..id",
+                  "jsonpath_query_name": "EventIDNOAuthNOSSL",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E4E28GS62YN4E3K4BotCSx2qOmRFcJD7D",
+        "name": "Group",
+        "title": "Create Kafka Event - SSL ENABLED NO Auth",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Create Kafka Event - SSL ENABLED NO Auth",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E4E28IY8QVS4H4Rd8VKiJuhqSHeNdOCul",
+            "name": "Generic CCS API Request",
+            "title": "Create Kafka Event - SSL Enabled No Auth",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n   \"title\":\"RG Kafka Event SSL Enabled No Auth$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n   \"target_id\":$activity.definition_activity_01E4DVZK3VGRL537qxsIkflUBX6yIa1ESb2.output.jsonpath_queries.TargetSSLNoAuthID$,\n   \"type\":\"kafka.event\",\n   \"base_type\":\"event\",\n   \"properties\":{\n      \"title\":\"RG Kafka Event SSL Enabled No Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n      \"topic_name\":\"tl-kafka-topic\",\n      \"target_id\":$activity.definition_activity_01E4DVZK3VGRL537qxsIkflUBX6yIa1ESb2.output.jsonpath_queries.TargetSSLNoAuthID$,\n      \"conditions\":{\n               \"operator\":\"eq\",\n               \"left_operand\":\"[$output.headers[0].header_key$]\",\n               \"right_operand\":\"SSL No Auth\"\n      }\n   }\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": false,
+              "display_name": "Create Kafka Event - SSL Enabled No Auth",
+              "relative_url": "be-console/api/v1/events",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4E28JQY4YL5aX8flyAqnSBdGTuJ6BfE1",
+            "name": "JSONPath Query",
+            "title": "Extract Event ID - SSL Enabled No Auth",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extract Event ID - SSL Enabled No Auth",
+              "input_json": "$activity.definition_activity_01E4E28IY8QVS4H4Rd8VKiJuhqSHeNdOCul.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..id",
+                  "jsonpath_query_name": "EventIDSSLNOAuth",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E4E9NW3C21Q7NdWabFNnWcWLUJNFq5H38",
+        "name": "Group",
+        "title": "Create Kafka Event - SSL CERT",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Create Kafka Event - SSL CERT",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E4E9NYABAKT1eR8x1zshImZzOpiiyaKTJ",
+            "name": "Generic CCS API Request",
+            "title": "Create Kafka Event - SSL Cert",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n   \"title\":\"RG Kafka Event SSL Enabled Cert$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n   \"target_id\":$activity.definition_activity_01E4DTSSFK2XR7PvJcqxOlq6sfGOJCEWdY5.output.jsonpath_queries.TargetCertificateID$,\n   \"type\":\"kafka.event\",\n   \"base_type\":\"event\",\n   \"properties\":{\n      \"title\":\"RG Kafka Event SSL Enabled Cert $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n      \"topic_name\":\"tl-kafka-topic\",\n      \"target_id\":$activity.definition_activity_01E4DTSSFK2XR7PvJcqxOlq6sfGOJCEWdY5.output.jsonpath_queries.TargetCertificateID$,\n      \"conditions\":{\n               \"operator\":\"eq\",\n               \"left_operand\":\"[$output.headers[0].header_key$]\",\n               \"right_operand\":\"SSL With Auth\"\n      }\n   }\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": false,
+              "display_name": "Create Kafka Event - SSL Cert",
+              "relative_url": "be-console/api/v1/events",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4E9NZ0ZBFX0UI445DkEl6nr2VcB2YW96",
+            "name": "JSONPath Query",
+            "title": "Extract Event ID - SSL Cert",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extract Event ID - SSL Cert",
+              "input_json": "$activity.definition_activity_01E4E9NYABAKT1eR8x1zshImZzOpiiyaKTJ.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..id",
+                  "jsonpath_query_name": "EventIDSSLCert",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E3LK05HLD8A4nnmPrPBPopNpnWCUN9mZc",
+        "name": "Group",
+        "title": "Workflow Creation - No SSL No Auth",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Workflow Creation - No SSL No Auth",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E3LK0GS2WJB2S1n3Oi7LwbDwCrWj0qOyG",
+            "name": "Generic CCS API Request",
+            "title": "Create No SSL No Auth Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"name\": \"RG Workflow With No SSL No Auth:$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"title\": \"RG Workflow With No SSL No Auth: $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"type\": \"generic.workflow\",\n  \"base_type\": \"workflow\",\n  \"properties\": {\n    \"display_name\": \"RG Workflow No SSL No Auth: $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n    \"atomic\": {\n      \"is_atomic\": false\n    },\n    \"delete_workflow_instance\": false,\n    \"runtime_user\": {\n      \"override_target_runtime_user\": false,\n      \"specify_on_workflow_start\": false,\n      \"target_default\": true\n    },\n    \"target\": {\n      \"execute_on_target_group\": false,\n      \"execute_on_workflow_target\": false,\n      \"no_target\": true,\n      \"specify_on_workflow_start\": false\n    }\n  }\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Create No SSL No Auth Workflow",
+              "relative_url": "be-console/api/v1/workflows",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo",
+            "name": "JSONPath Query",
+            "title": "Extracting Worklfow ID",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extracting Worklfow ID",
+              "input_json": "$activity.definition_activity_01E3LK0GS2WJB2S1n3Oi7LwbDwCrWj0qOyG.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..id",
+                  "jsonpath_query_name": "Workflow ID",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E3LK14CHTEL6CWbj6b1MsJwpd5FGIHqS1",
+            "name": "Generic CCS API Request",
+            "title": "Adding Upper action to the Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"previous_action\": {\n    \"id\": \"$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$\",\n    \"type\": \"generic.workflow\",\n    \"base_type\": \"workflow\"\n  },\n  \"action\": {\n    \"type\": \"core.string2upper\",\n    \"base_type\": \"activity\",\n    \"name\": \"To Upper\",\n    \"properties\": {\n      \"continue_on_failure\": false,\n      \"skip_execution\": false,\n      \"display_name\": \"To Upper\",\n      \"source\": \"automation\"\n    },\n    \"title\": \"To Upper\"\n  }\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Adding Upper action to the Workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$/actions",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E3LK1H4UGYW5T5wxVUwY6LwQmKMPeBck8",
+            "name": "Generic CCS API Request",
+            "title": "Adding Event to the Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"type\": \"event\",\n  \"disabled\": false,\n  \"name\": \"Event with No Auth No SSL\",\n  \"ref_id\": \"$activity.definition_activity_01E4DYIJAYFW94YfN1GRW3QBdBfgNpTWbFI.output.jsonpath_queries.EventIDNOAuthNOSSL$\",\n  \"title\": \"Event with No Auth No SSL\"\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Adding Event to the Workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$/triggers",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E3LK1TYIMXW0bTzMvxRabAmsXsT2xORxM",
+            "name": "Generic CCS API Request",
+            "title": "Validate Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Validate Workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$/validate",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E3LK26E4QST1zT99VSKKvumk9CDoMVifN",
+            "name": "Generic CCS API Request",
+            "title": "Execute the Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Execute the Workflow",
+              "relative_url": "be-console/api/v1/workflows/start?workflow_id=$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": true,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E4EH3LK48150aAmd3HZvQCarsPCswIQeC",
+        "name": "Group",
+        "title": "Workflow Creation - SSL Enabled No Auth",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Workflow Creation - SSL Enabled No Auth",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E4EH3NNTRVX4flunz1HMus9wwATHqU2C2",
+            "name": "Generic CCS API Request",
+            "title": "Create SSL Enabled No Auth Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"name\": \"RG Workflow SSL Enabled No Auth:$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"title\": \"RG Workflow With SSL Enabled No Auth: $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"type\": \"generic.workflow\",\n  \"base_type\": \"workflow\",\n  \"properties\": {\n    \"display_name\": \"RG Workflow SSL Enabled No Auth: $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n    \"atomic\": {\n      \"is_atomic\": false\n    },\n    \"delete_workflow_instance\": false,\n    \"runtime_user\": {\n      \"override_target_runtime_user\": false,\n      \"specify_on_workflow_start\": false,\n      \"target_default\": true\n    },\n    \"target\": {\n      \"execute_on_target_group\": false,\n      \"execute_on_workflow_target\": false,\n      \"no_target\": true,\n      \"specify_on_workflow_start\": false\n    }\n  }\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Create SSL Enabled No Auth Workflow",
+              "relative_url": "be-console/api/v1/workflows",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4EH3OEATXO1Jwjtn57dOZlzkZgzexOdU",
+            "name": "JSONPath Query",
+            "title": "Extracting Worklfow ID",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extracting Worklfow ID",
+              "input_json": "$activity.definition_activity_01E4EH3NNTRVX4flunz1HMus9wwATHqU2C2.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..id",
+                  "jsonpath_query_name": "Workflow ID",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4EH3P74EK56fCSYBiyEMsuEewAB9Lqkn",
+            "name": "Generic CCS API Request",
+            "title": "Adding Upper action to the Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"previous_action\": {\n    \"id\": \"$activity.definition_activity_01E4EH3OEATXO1Jwjtn57dOZlzkZgzexOdU.output.jsonpath_queries.Workflow ID$\",\n    \"type\": \"generic.workflow\",\n    \"base_type\": \"workflow\"\n  },\n  \"action\": {\n    \"type\": \"core.string2upper\",\n    \"base_type\": \"activity\",\n    \"name\": \"To Upper\",\n    \"properties\": {\n      \"continue_on_failure\": false,\n      \"skip_execution\": false,\n      \"display_name\": \"To Upper\",\n      \"source\": \"automation\"\n    },\n    \"title\": \"To Upper\"\n  }\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Adding Upper action to the Workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E4EH3OEATXO1Jwjtn57dOZlzkZgzexOdU.output.jsonpath_queries.Workflow ID$/actions",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4EH3PZL8NB4wjotxmSHob7a2YoLVbaHP",
+            "name": "Generic CCS API Request",
+            "title": "Adding Event to the Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"type\": \"event\",\n  \"disabled\": false,\n  \"name\": \"Event with SSL Enabled No Auth\",\n  \"ref_id\": \"$activity.definition_activity_01E4E28JQY4YL5aX8flyAqnSBdGTuJ6BfE1.output.jsonpath_queries.EventIDSSLNOAuth$\",\n  \"title\": \"Event with SSL Enabled No Auth\"\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Adding Event to the Workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E4EH3OEATXO1Jwjtn57dOZlzkZgzexOdU.output.jsonpath_queries.Workflow ID$/triggers",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4EH3R1XL8J1oIgf1HHRV4JupkUnCnGWg",
+            "name": "Generic CCS API Request",
+            "title": "Validate Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Validate Workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E4EH3OEATXO1Jwjtn57dOZlzkZgzexOdU.output.jsonpath_queries.Workflow ID$/validate",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4EH3SCIPAO0IPXu12fru80c9HaftYOtE",
+            "name": "Generic CCS API Request",
+            "title": "Execute the Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Execute the Workflow",
+              "relative_url": "be-console/api/v1/workflows/start?workflow_id=$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": true,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E4EJI9GPSON0UoNvMdI0HRX5D7BlPaBq2",
+        "name": "Group",
+        "title": "Workflow Creation - SSL Cert",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Workflow Creation - SSL Cert",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E4EJID1NDWY64Y1AM874aof7DuBVAu89O",
+            "name": "Generic CCS API Request",
+            "title": "Create Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"name\": \"RG Workflow SSL Cert:$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"title\": \"RG Workflow With SSL Cert: $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"type\": \"generic.workflow\",\n  \"base_type\": \"workflow\",\n  \"properties\": {\n    \"display_name\": \"RG Workflow SSL Cert: $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n    \"atomic\": {\n      \"is_atomic\": false\n    },\n    \"delete_workflow_instance\": false,\n    \"runtime_user\": {\n      \"override_target_runtime_user\": false,\n      \"specify_on_workflow_start\": false,\n      \"target_default\": true\n    },\n    \"target\": {\n      \"execute_on_target_group\": false,\n      \"execute_on_workflow_target\": false,\n      \"no_target\": true,\n      \"specify_on_workflow_start\": false\n    }\n  }\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Create Workflow",
+              "relative_url": "be-console/api/v1/workflows",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4EJIDUPR012qxqdn1ysclt0iT0vOXBak",
+            "name": "JSONPath Query",
+            "title": "Extracting Worklfow ID",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extracting Worklfow ID",
+              "input_json": "$activity.definition_activity_01E4EJID1NDWY64Y1AM874aof7DuBVAu89O.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..id",
+                  "jsonpath_query_name": "Workflow ID",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4EJIET6R3Y4DbcJukGhgD52SqHhIqYjF",
+            "name": "Generic CCS API Request",
+            "title": "Adding Upper action to the Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"previous_action\": {\n    \"id\": \"$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$\",\n    \"type\": \"generic.workflow\",\n    \"base_type\": \"workflow\"\n  },\n  \"action\": {\n    \"type\": \"core.string2upper\",\n    \"base_type\": \"activity\",\n    \"name\": \"To Upper\",\n    \"properties\": {\n      \"continue_on_failure\": false,\n      \"skip_execution\": false,\n      \"display_name\": \"To Upper\",\n      \"source\": \"automation\"\n    },\n    \"title\": \"To Upper\"\n  }\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Adding Upper action to the Workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E4EJIDUPR012qxqdn1ysclt0iT0vOXBak.output.jsonpath_queries.Workflow ID$/actions",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4EJIFO7Z376WlX4Jqma1lK26c9ih2Iq0",
+            "name": "Generic CCS API Request",
+            "title": "Adding Event to the Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"type\": \"event\",\n  \"disabled\": false,\n  \"name\": \"Event with SSL Cert\",\n  \"ref_id\": \"$activity.definition_activity_01E4E9NZ0ZBFX0UI445DkEl6nr2VcB2YW96.output.jsonpath_queries.EventIDSSLCert$\",\n  \"title\": \"Event with SSL Cert\"\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Adding Event to the Workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E4EJIDUPR012qxqdn1ysclt0iT0vOXBak.output.jsonpath_queries.Workflow ID$/triggers",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4EJIGLT5BR2yFM76WMFyLGDXpJNdQTHZ",
+            "name": "Generic CCS API Request",
+            "title": "Validate Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Validate Workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E4EJIDUPR012qxqdn1ysclt0iT0vOXBak.output.jsonpath_queries.Workflow ID$/validate",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4EJIHHF4OL1oDiAGhmfXOum0PH4JnHwA",
+            "name": "Generic CCS API Request",
+            "title": "Execute the Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Execute the Workflow",
+              "relative_url": "be-console/api/v1/workflows/start?workflow_id=$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": true,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E4ITJ4W9VBA3tY3jfajDd4ne1vk8DT8ga",
+        "name": "Group",
+        "title": "Kafka Trigger scenarios",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Kafka Trigger scenarios",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E4ITSHJX1US4olNItEj4WC8AzydBsossg",
+            "name": "Submit Kafka Message",
+            "title": "Submit Message - SSL Enabled No Auth",
+            "type": "kafka.submitmessage",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Submit Message - SSL Enabled No Auth",
+              "headers": [
+                {
+                  "key": "SSL No Auth",
+                  "value": ""
+                }
+              ],
+              "message": "{\"string1\": 1}",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target_group_criteria": true,
+                "target_group": {
+                  "use_criteria": {
+                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                    "conditions": [
+                      {
+                        "left_operand": "$targetgroup.kafka endpoint.input.description$",
+                        "operator": "eq",
+                        "right_operand": "RG Automation SSL Enabled No Auth"
+                      }
+                    ]
+                  }
+                }
+              },
+              "topic": "tl-kafka-topic"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E592OV1OGW31VpMYZBvv34d1xdydwsM5D",
+            "name": "Group",
+            "title": "Run Test Case1",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Run Test Case1",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01E58FVMMBXQK607h78R51oz9OMmOt95MCc",
+                "name": "Sleep",
+                "title": "Sleep for 30s",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep for 30s",
+                  "skip_execution": false,
+                  "sleep_interval": 30
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E58IBPDY3V45MZhxwjPqsy3lsJTJZL0oX",
+                "name": "Generic CCS API Request",
+                "title": "GET workflow instances",
+                "type": "ccs.api_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "api_call_method": "GET",
+                  "continue_on_failure": false,
+                  "display_name": "GET workflow instances",
+                  "relative_url": "be-console/api/v1/instances?workflow_id=$activity.definition_activity_01E4EH3OEATXO1Jwjtn57dOZlzkZgzexOdU.output.jsonpath_queries.Workflow ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E58J8J02EGF0g17kel25mTcn0Yn2ZNMiZ",
+                "name": "JSONPath Query",
+                "title": "Extract Instance Status",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extract Instance Status",
+                  "input_json": "$activity.definition_activity_01E58IBPDY3V45MZhxwjPqsy3lsJTJZL0oX.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$..status.state",
+                      "jsonpath_query_name": "InstanceStatus",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E4JC4HNC8ZU69CPsVD66AWA5SPM4Jum6J",
+                "name": "Condition Block",
+                "title": "Did workflow trigger?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Did workflow trigger?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01E4JC4KJN4JZ6vMXTFLYQ0lBzTt7kAU0lr",
+                    "name": "Condition Branch",
+                    "title": "YES",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01E58J8J02EGF0g17kel25mTcn0Yn2ZNMiZ.output.jsonpath_queries.InstanceStatus$",
+                        "operator": "eq",
+                        "right_operand": "success"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "YES",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01E58SVRF0FEW3X8WnipnwULkwhKY3Ul3Sl",
+                        "name": "Add Row to Table",
+                        "title": "Test Passed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Passed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "SSL Enabled No Auth"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Passed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01E4JC4LK0FWZ5WcaZIpr28nkl8Tw2jBMsl",
+                    "name": "Condition Branch",
+                    "title": "NO",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01E58IBPDY3V45MZhxwjPqsy3lsJTJZL0oX.output.response_body$",
+                        "operator": "eq",
+                        "right_operand": ""
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "NO",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01E58VHNVV7VL5kkUVBGEr8F4pV0nI9ILcT",
+                        "name": "Add Row to Table",
+                        "title": "Test Failed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Failed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "SSL Enabled No Auth"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Failed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01E4J44L6RKVP33bS4tYeGmNUAkxFgSzRZs",
+            "name": "Submit Kafka Message",
+            "title": "Submit Message - No Auth No SSL Duplicate Headers",
+            "type": "kafka.submitmessage",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Submit Message - No Auth No SSL Duplicate Headers",
+              "headers": [
+                {
+                  "key": "key1",
+                  "value": "value1"
+                },
+                {
+                  "key": "key1",
+                  "value": "value1"
+                },
+                {
+                  "key": "key1",
+                  "value": "value1"
+                }
+              ],
+              "message": "{\"string1\": 1}",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target_group_criteria": true,
+                "target_group": {
+                  "use_criteria": {
+                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                    "conditions": [
+                      {
+                        "left_operand": "$targetgroup.kafka endpoint.input.description$",
+                        "operator": "eq",
+                        "right_operand": "RG Automation No SSL No Auth"
+                      }
+                    ]
+                  }
+                }
+              },
+              "topic": "tl-kafka-topic"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E59337R08NC4am52qn8PPFaEEA17QG0Oj",
+            "name": "Group",
+            "title": "Run Test Case2",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Run Test Case2",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01E59339UZLPO58EVwJbyfi9jVLTnoOXLL0",
+                "name": "Sleep",
+                "title": "Sleep for 30s",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep for 30s",
+                  "skip_execution": false,
+                  "sleep_interval": 30
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E5933AZWG641uwx1HoualKllelV2GKWlc",
+                "name": "Generic CCS API Request",
+                "title": "GET workflow instances",
+                "type": "ccs.api_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "api_call_method": "GET",
+                  "continue_on_failure": false,
+                  "display_name": "GET workflow instances",
+                  "relative_url": "be-console/api/v1/instances?workflow_id=$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E5933C5E32D6B3KEYMQjBzDcNlVVwl83E",
+                "name": "JSONPath Query",
+                "title": "Extract Instance Status",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extract Instance Status",
+                  "input_json": "$activity.definition_activity_01E5933AZWG641uwx1HoualKllelV2GKWlc.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$..status.state",
+                      "jsonpath_query_name": "InstanceStatus",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E5933D2CA1Q2DUSrgrUbl43Ihs8vwQ8Z0",
+                "name": "Condition Block",
+                "title": "Did workflow trigger?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Did workflow trigger?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01E5933E5OYXL6WBFnS7zQv89TWbGlWph0s",
+                    "name": "Condition Branch",
+                    "title": "YES",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01E5933C5E32D6B3KEYMQjBzDcNlVVwl83E.output.jsonpath_queries.InstanceStatus$",
+                        "operator": "eq",
+                        "right_operand": "success"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "YES",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01E5933F612TG0cKMhOBPJ4B9s6CelFawJf",
+                        "name": "Add Row to Table",
+                        "title": "Test Passed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Passed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "No SSL No Auth - Duplicate Headers"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Passed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01E5933G4VOJN6NalFvEfQ73IgM5CS1xBXw",
+                    "name": "Condition Branch",
+                    "title": "NO",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01E5933AZWG641uwx1HoualKllelV2GKWlc.output.response_body$",
+                        "operator": "eq",
+                        "right_operand": ""
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "NO",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01E5933HB3FLQ2GJjFXunKP0V4zawOQtPrZ",
+                        "name": "Add Row to Table",
+                        "title": "Test Failed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Failed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "No SSL No Auth - Duplicate Headers"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Failed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01E4J4OCIC7GU7ZbrR3k2GDNm7mmU513lB2",
+            "name": "Submit Kafka Message",
+            "title": "Submit Message - No Auth No SSL ",
+            "type": "kafka.submitmessage",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Submit Message - No Auth No SSL ",
+              "headers": [
+                {
+                  "key": "key1",
+                  "value": "value1"
+                },
+                {
+                  "key": "key1",
+                  "value": "value1"
+                }
+              ],
+              "message": "{\"string1\": 1}",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target_group_criteria": true,
+                "target_group": {
+                  "use_criteria": {
+                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                    "conditions": [
+                      {
+                        "left_operand": "$targetgroup.kafka endpoint.input.description$",
+                        "operator": "eq",
+                        "right_operand": "RG Automation No SSL No Auth"
+                      }
+                    ]
+                  }
+                }
+              },
+              "topic": "tl-kafka-topic"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E597P6RXW7750hlvE3I2YnNOnpFTlTQ2D",
+            "name": "Group",
+            "title": "Run Test Case3",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Run Test Case3",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01E597P8XK9BH0BAJ02k2SraaISuV0OiM5o",
+                "name": "Sleep",
+                "title": "Sleep for 30s",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep for 30s",
+                  "skip_execution": false,
+                  "sleep_interval": 30
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E597P9OZMSQ3X47rIdSmivFWiBrXrJTTH",
+                "name": "Generic CCS API Request",
+                "title": "GET workflow instances",
+                "type": "ccs.api_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "api_call_method": "GET",
+                  "continue_on_failure": false,
+                  "display_name": "GET workflow instances",
+                  "relative_url": "be-console/api/v1/instances?workflow_id=$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E597PAIZH4U1GoN3IKfuevJLRSCLo9Fby",
+                "name": "JSONPath Query",
+                "title": "Extract Instance Status",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extract Instance Status",
+                  "input_json": "$activity.definition_activity_01E597P9OZMSQ3X47rIdSmivFWiBrXrJTTH.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$..status.state",
+                      "jsonpath_query_name": "InstanceStatus",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E597PBCYTJE0V7eK7VEmNOHvfKYec6pGb",
+                "name": "Condition Block",
+                "title": "Did workflow trigger?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Did workflow trigger?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01E597PC7SLAE3yvst1vBlQXHUT33t10xLW",
+                    "name": "Condition Branch",
+                    "title": "YES",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01E597PAIZH4U1GoN3IKfuevJLRSCLo9Fby.output.jsonpath_queries.InstanceStatus$",
+                        "operator": "eq",
+                        "right_operand": "success"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "YES",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01E597PD90C594hTg4WmuYMGfpsYMeOKfUa",
+                        "name": "Add Row to Table",
+                        "title": "Test Passed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Passed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "No SSL No Auth"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Passed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01E597PE6Q5BP7jdFXKwwKZYwLSPplLle6m",
+                    "name": "Condition Branch",
+                    "title": "NO",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01E597P9OZMSQ3X47rIdSmivFWiBrXrJTTH.output.response_body$",
+                        "operator": "eq",
+                        "right_operand": ""
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "NO",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01E597PF9TIRO4gbfIzlgcJnzy69rkZMNkI",
+                        "name": "Add Row to Table",
+                        "title": "Test Failed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Failed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "No SSL No Auth"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Failed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01E4J77H02JSH3cAgWhVVjbMyMAgcZgc2iH",
+            "name": "Submit Kafka Message",
+            "title": "Submit Message - SSL Cert",
+            "type": "kafka.submitmessage",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Submit Message - SSL Cert",
+              "headers": [
+                {
+                  "key": "SSL With Auth",
+                  "value": ""
+                }
+              ],
+              "message": "{\"string1\": 1}",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target_group_criteria": true,
+                "target_group": {
+                  "use_criteria": {
+                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                    "conditions": [
+                      {
+                        "left_operand": "$targetgroup.kafka endpoint.input.description$",
+                        "operator": "eq",
+                        "right_operand": "RG Automation No SSL No Auth"
+                      }
+                    ]
+                  }
+                }
+              },
+              "topic": "tl-kafka-topic"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E59JKXXDLWE1IcXjRDDeMJcThGDd3tf00",
+            "name": "Group",
+            "title": "Run Test Case4",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Run Test Case4",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01E59JL119ELQ5ppqbPC7jVN4ZtwNEkIyDi",
+                "name": "Sleep",
+                "title": "Sleep for 30s",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep for 30s",
+                  "skip_execution": false,
+                  "sleep_interval": 30
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E59JL1WSCHD5emfAdBdYA1tw5z7Cr84bu",
+                "name": "Generic CCS API Request",
+                "title": "GET workflow instances",
+                "type": "ccs.api_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "api_call_method": "GET",
+                  "continue_on_failure": false,
+                  "display_name": "GET workflow instances",
+                  "relative_url": "be-console/api/v1/instances?workflow_id=$activity.definition_activity_01E4EJIDUPR012qxqdn1ysclt0iT0vOXBak.output.jsonpath_queries.Workflow ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E59JL3VPQBD1XiTca9IASAwdittEgnGG0",
+                "name": "JSONPath Query",
+                "title": "Extract Instance Status",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extract Instance Status",
+                  "input_json": "$activity.definition_activity_01E59JL1WSCHD5emfAdBdYA1tw5z7Cr84bu.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$..status.state",
+                      "jsonpath_query_name": "InstanceStatus",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01E59JL4Q906R3MFiiGA84nUSWoST1XK9nS",
+                "name": "Condition Block",
+                "title": "Did workflow trigger?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Did workflow trigger?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01E59JL5P76XA48qeQE2TXEwc20zEJOrBEZ",
+                    "name": "Condition Branch",
+                    "title": "YES",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01E59JL3VPQBD1XiTca9IASAwdittEgnGG0.output.jsonpath_queries.InstanceStatus$",
+                        "operator": "eq",
+                        "right_operand": "success"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "YES",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01E59JL6TS9SD406Ptn1orO3nISBnGhUQIc",
+                        "name": "Add Row to Table",
+                        "title": "Test Passed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Passed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "SSL Cert"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Passed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01E59JL7UE6GZ0vyw0B5OWsagKxLDe06RIZ",
+                    "name": "Condition Branch",
+                    "title": "NO",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01E59JL1WSCHD5emfAdBdYA1tw5z7Cr84bu.output.response_body$",
+                        "operator": "eq",
+                        "right_operand": ""
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "NO",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01E59JL8T5OK51PdWhgKMpr7jkNFdJxqutf",
+                        "name": "Add Row to Table",
+                        "title": "Test Failed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Failed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "SSL Cert"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Failed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E4IP4EXTQDZ1aJBl0gi9WjJ4nEYAb7kCB",
+        "name": "Group",
+        "title": "Delete Workflows",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Delete Workflows",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E4IP1IX64TO5lkFUud874gyP3rZ2OBc63",
+            "name": "Generic CCS API Request",
+            "title": "Delete SSL Cert Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "DELETE",
+              "continue_on_failure": false,
+              "display_name": "Delete SSL Cert Workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E4EJIDUPR012qxqdn1ysclt0iT0vOXBak.output.jsonpath_queries.Workflow ID$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4IPUNX5KEC3dqvubSGzJAhZNUtKR7voY",
+            "name": "Generic CCS API Request",
+            "title": "Delete No SSL No Auth workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "DELETE",
+              "continue_on_failure": false,
+              "display_name": "Delete No SSL No Auth workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4IQE1ARLLW7DUw4ZE0luQ7Kv3g5XMUYk",
+            "name": "Generic CCS API Request",
+            "title": "Delete No SSL No Auth workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "DELETE",
+              "continue_on_failure": false,
+              "display_name": "Delete No SSL No Auth workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E4EH3OEATXO1Jwjtn57dOZlzkZgzexOdU.output.jsonpath_queries.Workflow ID$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E4IKIBHGIYY170tdDCKGYz52F9JmN52hI",
+        "name": "Group",
+        "title": "Delete Events",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Delete Events",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E4IKIDUPFFC1vQ83VWrX2C2S0NvNibSX8",
+            "name": "Generic CCS API Request",
+            "title": "Delete Cert Event",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "DELETE",
+              "continue_on_failure": false,
+              "display_name": "Delete Cert Event",
+              "relative_url": "be-console/api/v1/events/$activity.definition_activity_01E4E9NZ0ZBFX0UI445DkEl6nr2VcB2YW96.output.jsonpath_queries.EventIDSSLCert$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4IN88FHN380gKEvNueiUF9xyVI9orrlx",
+            "name": "Generic CCS API Request",
+            "title": "Delete No SSL No Auth Event",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "DELETE",
+              "continue_on_failure": false,
+              "display_name": "Delete No SSL No Auth Event",
+              "relative_url": "be-console/api/v1/events/$activity.definition_activity_01E4DYIJAYFW94YfN1GRW3QBdBfgNpTWbFI.output.jsonpath_queries.EventIDNOAuthNOSSL$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4IN9S7W8XT0ojxdfytwohGOva95kxZZN",
+            "name": "Generic CCS API Request",
+            "title": "Delete SSL Enabled No Auth Event",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "DELETE",
+              "continue_on_failure": false,
+              "display_name": "Delete SSL Enabled No Auth Event",
+              "relative_url": "be-console/api/v1/events/$activity.definition_activity_01E4E28JQY4YL5aX8flyAqnSBdGTuJ6BfE1.output.jsonpath_queries.EventIDSSLNOAuth$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E4IIMKOGUK50r6WKDZKSY3BmWjvwLsMOP",
+        "name": "Group",
+        "title": "Delete Targets",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Delete Targets",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E4IIMMKWOZ7177Znk7TBqtDMt9Z1CWVJ5",
+            "name": "Generic CCS API Request",
+            "title": "Delete Cert Target",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "DELETE",
+              "continue_on_failure": false,
+              "display_name": "Delete Cert Target",
+              "relative_url": "be-console/api/v1/targets/$activity.definition_activity_01E4DTSSFK2XR7PvJcqxOlq6sfGOJCEWdY5.output.jsonpath_queries.TargetCertificateID$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4IJHSMDX9B69lvr2hhsDcK0XebOLGvCy",
+            "name": "Generic CCS API Request",
+            "title": "Delete No SSL No Auth Target",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "DELETE",
+              "continue_on_failure": false,
+              "display_name": "Delete No SSL No Auth Target",
+              "relative_url": "be-console/api/v1/targets/$activity.definition_activity_01E4DV8SQGEHB5N20IBeqxwbwYaJE6hgVH5.output.jsonpath_queries.TargetNoSSLNoAuthID$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01E4IK0PY9BYW6YqnVyll1gcOFJHmy1TRl4",
+            "name": "Generic CCS API Request",
+            "title": "Delete SSL No Auth Target",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "DELETE",
+              "continue_on_failure": false,
+              "display_name": "Delete SSL No Auth Target",
+              "relative_url": "be-console/api/v1/targets/$activity.definition_activity_01E4DVZK3VGRL537qxsIkflUBX6yIa1ESb2.output.jsonpath_queries.TargetSSLNoAuthID$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01E4IEWVRAKP11o1KvG9xgIw8RkW2ucaMDK",
+        "name": "Group",
+        "title": "Delete Account Keys",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Delete Account Keys",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01E4IFKJBZCJ46vUO2ptVJRy4YDvcKkaEhV",
+            "name": "Generic CCS API Request",
+            "title": "Delete Account Keys",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "DELETE",
+              "continue_on_failure": false,
+              "display_name": "Delete Account Keys",
+              "relative_url": "be-console/api/v1/runtime_users/$activity.definition_activity_01E3LJY23IFUR7TUyzRJUKvGr5zJt3SiVv3.output.jsonpath_queries.Accountkeys ID$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "target_groups": {
+    "target_group_01E4J1PJ7PKVN1E0Hy98TgSwVZBW95uwkdn": {
+      "unique_name": "target_group_01E4J1PJ7PKVN1E0Hy98TgSwVZBW95uwkdn",
+      "name": "RG Kafka Group",
+      "title": "RG Kafka Group",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "kafka.endpoint",
+          "view_target_type": "kafka.endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
+    }
+  },
+  "table_types": {
+    "tabletype_01E591O5W60KD3z44gnmNeTIuEnuLa3hAxE": {
+      "unique_name": "tabletype_01E591O5W60KD3z44gnmNeTIuEnuLa3hAxE",
+      "data_type": "datatype.tabletype",
+      "display_name": "Test Cases",
+      "columns": [
+        {
+          "name": "Status",
+          "title": "Status",
+          "type": "string"
+        },
+        {
+          "name": "TestScenarios",
+          "title": "TestScenarios",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
