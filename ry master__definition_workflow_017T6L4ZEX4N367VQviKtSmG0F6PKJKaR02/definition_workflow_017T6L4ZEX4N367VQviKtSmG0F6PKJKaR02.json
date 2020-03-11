@@ -1,0 +1,3119 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_017T6L4ZEX4N367VQviKtSmG0F6PKJKaR02",
+    "name": "ry master",
+    "title": "ry master",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "ry master",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_017T6LI2KRMVS7jLhlDzMHGhAiC1i07Oc6d",
+        "name": "Regression_CoreAdapter_PositiveTests",
+        "title": "Regression_CoreAdapter_PositiveTests",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Regression_CoreAdapter_PositiveTests",
+          "input": {},
+          "target": {
+            "no_target": true,
+            "override_workflow_target": false
+          },
+          "workflow_id": "definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "table_types": {
+    "tabletype_015PQ22GDTTZZ191zgAzGimqU3rdXrs99XS": {
+      "unique_name": "tabletype_015PQ22GDTTZZ191zgAzGimqU3rdXrs99XS",
+      "data_type": "datatype.tabletype",
+      "display_name": "AutomationResults",
+      "columns": [
+        {
+          "is_required": true,
+          "name": "ActivityName",
+          "title": "activityname",
+          "type": "string"
+        },
+        {
+          "is_required": true,
+          "name": "PassFail",
+          "title": "passfail",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_0161T4YWDN19P5MHueu6kw5idq0U5JaiveX": {
+      "unique_name": "tabletype_0161T4YWDN19P5MHueu6kw5idq0U5JaiveX",
+      "data_type": "datatype.tabletype",
+      "display_name": "Activity Table Type",
+      "columns": [
+        {
+          "is_required": true,
+          "maxLength": 128,
+          "name": "activity_name",
+          "title": "Activity Name",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3",
+        "name": "Regression_CoreAdapter_PositiveTests_5.0.3",
+        "title": "Regression_CoreAdapter_PositiveTests_5.0.3",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "tabletype_015PQ22GDTTZZ191zgAzGimqU3rdXrs99XS",
+            "properties": {
+              "scope": "local",
+              "name": "BlankResults",
+              "type": "datatype.table",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_017T62RL8WN4211c4deCJVUzhnoyGqBG9RV",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "local",
+              "name": "PassFail",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_017T635J3S1IB6u6QPJ45vp1FaRw8LMKy8c",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_015PQ22GDTTZZ191zgAzGimqU3rdXrs99XS",
+            "properties": {
+              "scope": "output",
+              "name": "Results",
+              "type": "datatype.table",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "initial value",
+              "scope": "local",
+              "name": "SetVariableString",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_017T647YIB53K1DHpJEDXzwxdslvr5MTeFV",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "local",
+              "name": "ActiveName",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_017T61EDROZ1N4y22BJBc2dz4YXgtoiWcSM",
+            "object_type": "variable_workflow"
+          },
+          {
+            "schema_id": "tabletype_0161T4YWDN19P5MHueu6kw5idq0U5JaiveX",
+            "properties": {
+              "value": [
+                {
+                  "column_data": {
+                    "activity_name": "Calculate Date"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Calculate Date Time Difference"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Convert Json to Xml"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Convert Xml to Json"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Escape Regex Metacharacters"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Find String"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Format Date"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "JSONPath Query"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Match Regular Expression"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Parse Date"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Replace String"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Set Variables"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Sleep"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Split String"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Substring"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "To Lower"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "To Upper"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "Trim String"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "XPath Query"
+                  }
+                },
+                {
+                  "column_data": {
+                    "activity_name": "XSL Transform"
+                  }
+                }
+              ],
+              "scope": "local",
+              "name": "Activity",
+              "type": "datatype.table",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_017T6291JAZMQ5fDvYtiV1tnHj4Ft3PK15a",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "description": "Regression Core Adapter Positive Test 5.0.3",
+          "display_name": "Regression_CoreAdapter_PositiveTests_5.0.3",
+          "favorite": false,
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "specify_on_workflow_start": false
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_017T64BII6ZVN5cN36EVJ3IZG9hKJRakBG5",
+            "name": "Set Variables",
+            "title": "Clear out the results table",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Clear out the results table",
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                  "variable_value_new": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.local.variable_workflow_017T62RL8WN4211c4deCJVUzhnoyGqBG9RV$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg",
+            "name": "For Each",
+            "title": "For Each Core Activity",
+            "type": "logic.for_each",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "For Each Core Activity",
+              "source_array": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.local.variable_workflow_017T6291JAZMQ5fDvYtiV1tnHj4Ft3PK15a$"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_017T66OLIACQP4UVzIOkoD9LebHSBjCOa9J",
+                "name": "Condition Block",
+                "title": "Activity Name to test",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Activity Name to test"
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_017T66OR10QK12Di0TWBNzOyJ7n9hxe6mj4",
+                    "name": "Condition Branch",
+                    "title": "Calculate Date?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Calculate Date"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Calculate Date?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017T65MKG94186VavXHgXty8xLTDbKw8g0m",
+                        "name": "Calculate Date",
+                        "title": "Calculate Date",
+                        "type": "core.calculate_date",
+                        "base_type": "activity",
+                        "properties": {
+                          "adjustment": 3600,
+                          "continue_on_failure": true,
+                          "display_name": "Calculate Date",
+                          "original_date": "2019-01-01T12:00:00-06:00",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017T690W2J5WM0yVS3dMp7cXYLJ9DKHz7R9",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017T6911UMMI74W9A0j8miR5S5acYHnWhtI",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T65MKG94186VavXHgXty8xLTDbKw8g0m.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": true
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6BSVPUI4B5GEh0A7PObkguFtviuk4N9",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017T6913LD3330O9oZBaivcqXiI6Fu607U3",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T65MKG94186VavXHgXty8xLTDbKw8g0m.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": false
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6CFW0BI0G0wrgX5XIcmAF69bmDNonbT",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017T6F80XX78P6fqw5tt5Z0zXEwWFSJrRj4",
+                    "name": "Condition Branch",
+                    "title": "Calculate Date Time Difference?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Calculate Date Time Difference"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Calculate Date Time Difference?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017T6FG6KZKAW1qyFeY5P3ijfydvxZgYLL5",
+                        "name": "Calculate Date Time Difference",
+                        "title": "Calculate Date Time Difference",
+                        "type": "core.calculate_date_time_difference",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Calculate Date Time Difference",
+                          "original_date": "2019-01-01T13:00:00-06:00",
+                          "skip_execution": false,
+                          "subtract_date": "2019-01-01T12:00:00-06:00"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017T6F84G5GZ71ha0W4maNEqQ7bVxFMufV3",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017T6F85V2H9M4zqy80DRb55UlgxRjnJ0Qk",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6FG6KZKAW1qyFeY5P3ijfydvxZgYLL5.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_017T6F894WDHA17Yuwx6ZOVT1VcCXWDMfFy",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6FG6KZKAW1qyFeY5P3ijfydvxZgYLL5.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6F8ASO4082gxdgxEA8JDcZykCungXxc",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017T6MBUSP2B65fjarYxdT3tuaDcLW1yGzD",
+                    "name": "Condition Branch",
+                    "title": "Convert Json to Xml?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Convert Json to Xml"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Convert Json to Xml?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017T6MM4RHIZ239TwP7ez238t6XNZcIN8Lw",
+                        "name": "Convert Json to Xml",
+                        "title": "Convert Json to Xml",
+                        "type": "core.json2xml",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Convert Json to Xml",
+                          "input_json": "{\n  \"firstName\": \"John\",\n  \"lastName\" : \"doe\",\n  \"age\"      : 26,\n  \"address\"  : {\n    \"streetAddress\": \"naist street\",\n    \"city\"         : \"Nara\",\n    \"postalCode\"   : \"630-0192\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"type\"  : \"iPhone\",\n      \"number\": \"0123-4567-8888\"\n    },\n    {\n      \"type\"  : \"home\",\n      \"number\": \"0123-4567-8910\"\n    }\n  ]\n}",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017T6MC0V1X582Jx87Jts9mvxrwKilTfLGt",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017T6MC29J8J44JUkRcmYVYWzyHxMrA4pNK",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6MM4RHIZ239TwP7ez238t6XNZcIN8Lw.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6MC3Y68FD0uUXjObzSS8rPuq53BidSk",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017T6MC5NFUBO0nhlAS9CcQ3QzTrSzcEBvp",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6MM4RHIZ239TwP7ez238t6XNZcIN8Lw.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6MC7DGDZA3ocBY0FJaak6d0eeAfOk3Z",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017T6POS56QCJ2zQhCEH5ed0KcaqwKo8rZE",
+                    "name": "Condition Branch",
+                    "title": "Convert Xml to Json?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Convert Xml to Json"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Convert Xml to Json?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017T6PT0JEGBW0DknxXFG3QeL2bXcW88uvU",
+                        "name": "Convert Xml to Json",
+                        "title": "Convert Xml to Json",
+                        "type": "core.xml2json",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Convert Xml to Json",
+                          "input_xml": "\u003cdoc\u003e\n  \u003caddress\u003e\n    \u003ccity\u003eNara\u003c/city\u003e\n    \u003cpostalCode\u003e630-0192\u003c/postalCode\u003e\n    \u003cstreetAddress\u003enaist street\u003c/streetAddress\u003e\n  \u003c/address\u003e\n  \u003cage\u003e26\u003c/age\u003e\n  \u003cfirstName\u003eJohn\u003c/firstName\u003e\n  \u003clastName\u003edoe\u003c/lastName\u003e\n  \u003cphoneNumbers\u003e\n    \u003cnumber\u003e0123-4567-8888\u003c/number\u003e\n    \u003ctype\u003eiPhone\u003c/type\u003e\n  \u003c/phoneNumbers\u003e\n  \u003cphoneNumbers\u003e\n    \u003cnumber\u003e0123-4567-8910\u003c/number\u003e\n    \u003ctype\u003ehome\u003c/type\u003e\n  \u003c/phoneNumbers\u003e\n\u003c/doc\u003e",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017T6POVTR1RM5AWNZ4QPyIMjNXzSAZPReq",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017T6POXD1MY07HLAArsnHsWcN3Vvc3W8cB",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6PT0JEGBW0DknxXFG3QeL2bXcW88uvU.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6POZ7XH886Ef3GB5YZkHYJBuFfN3VSC",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017T6PP0OXE0F61R1aFyvYTgodJHsdI5umw",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6PT0JEGBW0DknxXFG3QeL2bXcW88uvU.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6PP2GN0WE3tTT2rHjcAAmTYkXG2VhCE",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017T6RDZRK3RI0yt8bLvmMwbDDu9qjgro5f",
+                    "name": "Condition Branch",
+                    "title": "Escape Regex Metacharacters?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Escape Regex Metacharacters"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Escape Regex Metacharacters?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017T6RIBJ109D4rCytu1rYyIpMO3QlrukKD",
+                        "name": "Escape Regex Metacharacters",
+                        "title": "Escape Regex Metacharacters",
+                        "type": "core.escape_regex",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Escape Regex Metacharacters",
+                          "skip_execution": false,
+                          "source": "pand[ora]=panda"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017T6RE3BYN9E3dUSimPMpebmh55Ia6Vtq5",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017T6RE4VE9EH1x6TYhcfb6fpyUkEgCzXi3",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6RIBJ109D4rCytu1rYyIpMO3QlrukKD.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6RE6ONMHH6xzk3kWMFo1CceKojy283z",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017T6RE873MNW6B7FY1wbr35KLe3toez6Mj",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6RIBJ109D4rCytu1rYyIpMO3QlrukKD.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6REA24Y5U1BiZC6wS6rnsbrmdBDgyn7",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017T6UYHCYCNO44eIee1X0wcVmEY9mRlWt9",
+                    "name": "Condition Branch",
+                    "title": "Find String?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Find String"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Find String?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017T6V587XO5K5dtN5qMoq8SSI4xPAOcDYA",
+                        "name": "Find String",
+                        "title": "Find String",
+                        "type": "core.find_string",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Find String",
+                          "searched_string": "is",
+                          "source": "This is a test. This is a journey into sound."
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017T6UYL2GBEG7PDL9jxfzCnEEZuqV8qY6E",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017T6UYMHB3XR0PdzP2ByZAGnTzT1ef8sUR",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6V587XO5K5dtN5qMoq8SSI4xPAOcDYA.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6UYO6XGUD61I9bVOPb6zi045QN170ZP",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017T6UYPPNAAA3p1br6IXL5Ej0QNRmPW5Jk",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6V587XO5K5dtN5qMoq8SSI4xPAOcDYA.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6UYS4JB2C5V3E3BY0zb9bPHqT6Pbokq",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017T6WTKTD1X31ZPK7jN0MkynZtankjFbWz",
+                    "name": "Condition Branch",
+                    "title": "Format Date?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Format Date"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Format Date?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017T6WXUKFGE870o8izEOYoeyPa1P6ppvha",
+                        "name": "Format Date",
+                        "title": "Format Date",
+                        "type": "core.format_date",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Format Date",
+                          "format_string": "Mon Jan _2 15:04:05 MST 2006",
+                          "original_date": "2019-01-01T12:00:00-06:00",
+                          "skip_execution": false,
+                          "use_custom_format": false
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017T6WTODEUSF11gCAnl3Q4LYiKlogU9JfI",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017T6WTQAHV4J7mniqgj1IvKrTmziZN1wDH",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6WXUKFGE870o8izEOYoeyPa1P6ppvha.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6WTSLT7UG5jO8xnmwpPRxJaiK0or6Wk",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017T6WTUYRKEA6FZmgNmGayGjdco4P75eXu",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017T6WXUKFGE870o8izEOYoeyPa1P6ppvha.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017T6WTX3W3MV3FjCHCBsl9KC73aCERFt2Q",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017UZP9V1IBHN1d06L6sqy51EoC2fzAx8V9",
+                    "name": "Condition Branch",
+                    "title": "JSONPath Query?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "JSONPath Query"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "JSONPath Query?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017UZPGRKUEWU0vXlZF73uqJ2Jo4UuG4NIn",
+                        "name": "JSONPath Query",
+                        "title": "JSONPath Query",
+                        "type": "corejava.jsonpathquery",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": true,
+                          "display_name": "JSONPath Query",
+                          "input_json": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"doe\",\n  \"age\": 26,\n  \"address\": {\n    \"streetAddress\": \"naist street\",\n    \"city\": \"Nara\",\n    \"postalCode\": \"630-0192\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"type\": \"iPhone\",\n      \"number\": \"0123-4567-8888\"\n    },\n    {\n      \"type\": \"home\",\n      \"number\": \"0123-4567-8910\"\n    }\n  ]\n}",
+                          "jsonpath_queries": [
+                            {
+                              "jsonpath_query": "$.phoneNumbers[:1].type",
+                              "jsonpath_query_name": "type",
+                              "jsonpath_query_type": "string",
+                              "zdate_type_format": ""
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017UZP9YR3EZ20k5Y4rrERrGt33btit6Z49",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017UZPA09SH802i41xm8i4jzBlNpkfEdTc8",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017UZPGRKUEWU0vXlZF73uqJ2Jo4UuG4NIn.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017UZPA2ADPH83u86RqgSyl3LmME0CaPUcj",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017UZPA3SAKVS5kRILHwQctut3i4hLB251A",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017UZPGRKUEWU0vXlZF73uqJ2Jo4UuG4NIn.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017UZPA5ETARM2Yg1vTttPok2gjsR9rhrWB",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017UZSK9QTF0H7ZFEexPToVxD7L28yqv5F3",
+                    "name": "Condition Branch",
+                    "title": "Match Regular Expression?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Match Regular Expression"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Match Regular Expression?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017UZSP3OGBP442TxdrJYFkoQmFJqOQSnBy",
+                        "name": "Match Regular Expression",
+                        "title": "Match Regular Expression",
+                        "type": "core.matchregex",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Match Regular Expression",
+                          "input_regex": "abc(bc)*",
+                          "input_string": "This is a test. I will try abc and abcbc will work but abbc won't be.",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017UZSKDFG4ZO3CkN4hsncKupBm3dX7hIZv",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017UZSKEVLFL85VMDfHNzzlp7IejkfjSLsH",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017UZSP3OGBP442TxdrJYFkoQmFJqOQSnBy.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017UZSKGLNSG40ma9dg7g8o7XBpSICG4Pxr",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017UZSKI25NXM0riDjYXvKKjSpQK4ygf4XG",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017UZSP3OGBP442TxdrJYFkoQmFJqOQSnBy.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017UZSKJRGSEF5mhFCxv5bPgPTc7mHwNs81",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017UZZ32MMNDV6zMBUms1Xpa8j0MqldML6N",
+                    "name": "Condition Branch",
+                    "title": "Parse Date?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Parse Date"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Parse Date?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017UZZ9TLWYDE6UFCjNAx8JMeXMcwfXGwNE",
+                        "name": "Parse Date",
+                        "title": "Parse Date",
+                        "type": "core.parse_date",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Parse Date",
+                          "format_string": "2006-01-02T15:04:05Z07:00",
+                          "input_string": "2019-01-01T12:00:00-06:00",
+                          "skip_execution": false,
+                          "use_custom_format": false
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017UZZ38D91NE6lD6nuXFItvUFUG0Qtjt0E",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017UZZ3A1X0T20mhd7aRcOEKMRIQ9YEmlwh",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017UZZ9TLWYDE6UFCjNAx8JMeXMcwfXGwNE.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017UZZ3BTPAVL06CH2eQfGld0tOyC7jaVE0",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017UZZ3F4BPXV76czoCjdc5oIuZSNxHZb7m",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017UZZ9TLWYDE6UFCjNAx8JMeXMcwfXGwNE.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017UZZ3IWSZSE1gugc4AUR199hvOFz1nZQM",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017V019S1351S45w5onxfkqDyUjad7DTeLH",
+                    "name": "Condition Branch",
+                    "title": "Replace String?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Replace String"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Replace String?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017V01FCEDTWH0ZkIcHXDT3iTU9JX0fYWWZ",
+                        "name": "Replace String",
+                        "title": "Replace String",
+                        "type": "core.replacestring",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Replace String",
+                          "input_string": "This isn't a test",
+                          "replace_list": [
+                            {
+                              "replaced_string": "isn't",
+                              "replacement_string": "is"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017V019VUTFZA2Js8UcZDt5Nad7Sr5VEb7f",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017V019XG6D132rmw396kHKKOkv80VWwxhy",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V01FCEDTWH0ZkIcHXDT3iTU9JX0fYWWZ.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V019Z5WUZ71BpFKU0YO461AdKxBQaCJp",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017V01A0NIP6G7B6kfGkcuVSqb2Wk62CM7q",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V01FCEDTWH0ZkIcHXDT3iTU9JX0fYWWZ.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V01A2E2TWL20KyGqfRusy8UL56uyXUGw",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017V03B4V42CB6AycAw4cy9zklczHZZ8pcR",
+                    "name": "Condition Branch",
+                    "title": "Set Variables?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Set Variables"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Set Variables?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017V03F1Q56G51RfrJmkayEzgWFKb2fgdFm",
+                        "name": "Set Variables",
+                        "title": "Set Variables",
+                        "type": "core.set_multiple_variables",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Set Variables",
+                          "skip_execution": false,
+                          "variables_to_update": [
+                            {
+                              "variable_to_update": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.local.variable_workflow_017T647YIB53K1DHpJEDXzwxdslvr5MTeFV$",
+                              "variable_value_new": "I just used set variable."
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017V03B8MXVK76w07UuNnGO4TLmz8phQEOL",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017V03BA3JEX244kCsxOhjy2XfiUQHc150n",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V03F1Q56G51RfrJmkayEzgWFKb2fgdFm.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V03BBSUJZ23QGnY1H4FIc0nuIKM1y8zT",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017V03BDBXW316ZCfqon1mir4sBYzj0xMmF",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V03F1Q56G51RfrJmkayEzgWFKb2fgdFm.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V03BFLMYNS1cudsg2NdpmgPvrWsVEwZk",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017V05IRVSEYO2MlfT7NMJDWzfIOqGFeRp4",
+                    "name": "Condition Branch",
+                    "title": "Sleep?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Sleep"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Sleep?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017V05NKU037P02Oc8c9wEhi32E0IOyTw2u",
+                        "name": "Sleep",
+                        "title": "Sleep",
+                        "type": "core.sleep",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "Sleep",
+                          "skip_execution": false,
+                          "sleep_interval": 1
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017V05IW2VQY215Mis1Q6pszM2QTNLy4OGd",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017V05IXLHMK30hW2YW9gt0xON7Neojyn4y",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V05NKU037P02Oc8c9wEhi32E0IOyTw2u.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": true
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V05IZIVUOX7QY43pfHSDrTkfiU8H6A4Y",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017V05J164WWU3oUAvhPhzIzB5FaTzf9Jr0",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V05NKU037P02Oc8c9wEhi32E0IOyTw2u.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V05J2ZB4YP2UiAQEanx9mV7rHi8qnHQj",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017V07EL3ZNIB0t9iU8DpBECkJ5kNeu127Z",
+                    "name": "Condition Branch",
+                    "title": "Split String?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Split String"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Split String?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017V07K3TI1TH1e1YLv8WaZ8MDTBeSfWvqz",
+                        "name": "Split String",
+                        "title": "Split String",
+                        "type": "core.splitstring",
+                        "base_type": "activity",
+                        "properties": {
+                          "boundaries": [
+                            {
+                              "boundary": "is"
+                            }
+                          ],
+                          "continue_on_failure": true,
+                          "display_name": "Split String",
+                          "input_string": "This is a test. This is a journey into sound.",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017V07EOY61FG6ORTo6iEdTl9JDhQVPpD3O",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017V07EQEQDZI5UI0ieDTYEVpXyACCwJuhW",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V07K3TI1TH1e1YLv8WaZ8MDTBeSfWvqz.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V07ES853QN0JtSsBseLol11SFER5uz9V",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017V07ETQ0R7Y2V0OkjFv6Ej0gUrFkfyIW2",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V07K3TI1TH1e1YLv8WaZ8MDTBeSfWvqz.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V07EVJMV7T7jkTCuQWf6VH7dK1l6bqGp",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017V09T65DJ535wCefCGG8x4BGWdmKUYmjY",
+                    "name": "Condition Branch",
+                    "title": "Substring?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Substring"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Substring?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017V09ZBTK7772O4YCGjvpMOQeszN2U3s4d",
+                        "name": "Substring",
+                        "title": "Substring",
+                        "type": "core.substring",
+                        "base_type": "activity",
+                        "properties": {
+                          "begin": 10,
+                          "continue_on_failure": true,
+                          "display_name": "Substring",
+                          "end": 15,
+                          "skip_execution": false,
+                          "source": "This is a test"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017V09T9S8YZH3CsyES1NwkoWPP1Mq6L3Q1",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017V09TBTF7X21TvXLJpodTuKPrhZLbsUJU",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V09ZBTK7772O4YCGjvpMOQeszN2U3s4d.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V09TDNMEOY1jQTJshLhqKUhjVFQuAich",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017V09TFBR07Z3ZmP5h1O9TB33zo78xUWR1",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V09ZBTK7772O4YCGjvpMOQeszN2U3s4d.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V09TH310OF1i5L7XfGFvWWy6Vo60gEPh",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017V0BZNZKQQL0Z4je6xm6uufulr0kujfZJ",
+                    "name": "Condition Branch",
+                    "title": "To Lower?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "To Lower"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "To Lower?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017V0C6NBCDPG0kEZz6cZC4qw1R5pM7WcPu",
+                        "name": "To Lower",
+                        "title": "To Lower",
+                        "type": "core.string2lower",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "To Lower",
+                          "source": "To Lower TeST"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017V0BZSDWNBG5Z93arwApCV3iTxzMsdAEg",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017V0BZUIKEN87DinH9dqPIgEbcbdWx5tu8",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V0C6NBCDPG0kEZz6cZC4qw1R5pM7WcPu.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V0BZXHL55W3lKCGqpZP7MOfEqT7UpDeU",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017V0BZZIDBXD1egrwJsZNtIEgKEP5lGfh6",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V0C6NBCDPG0kEZz6cZC4qw1R5pM7WcPu.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V0C01V12NO68F2md60olzEn2MsSiuNCr",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017V0DOZVS5GB5al1cthqHhfVfynjJaGHKZ",
+                    "name": "Condition Branch",
+                    "title": "To Upper?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "To Upper"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "To Upper?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017V0DULUXJ962amYgZTA4xuYIa7Vn8AnTy",
+                        "name": "To Upper",
+                        "title": "To Upper",
+                        "type": "core.string2upper",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "To Upper",
+                          "source": "To Upper tESt"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017V0DP6OLTVU5GVc7hNs3cexDyY9aS68Vm",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017V0DP8EHSBC29OauHDARK8PE9Q6vOnPxq",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V0DULUXJ962amYgZTA4xuYIa7Vn8AnTy.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V0DPAJ9D4J0v5E74lbxapGjfhAbjuSfS",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017V0DPC6NXI21x0IWqZJxpVJCh0SzHxypL",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V0DULUXJ962amYgZTA4xuYIa7Vn8AnTy.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V0DPE647ZI1CQQ7r2XeIdab6Nafbbif9",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017V0FA8HOIN253GLdC8bnCNTlErYvoWPCP",
+                    "name": "Condition Branch",
+                    "title": "Trim String?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "Trim String"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Trim String?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017V0FFNAKX3M3G8j18nTLahLQ6qVDLu1ry",
+                        "name": "Trim String",
+                        "title": "Trim String",
+                        "type": "core.trim_string",
+                        "base_type": "activity",
+                        "properties": {
+                          "characters_to_trim": ",",
+                          "continue_on_failure": true,
+                          "display_name": "Trim String",
+                          "skip_execution": false,
+                          "source": "This is a, test",
+                          "trim_leading": true,
+                          "trim_trailing": true
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017V0FAC60ML506eNgZPE9K4OiRpeuQk4pY",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017V0FADOZ97Z64IdJOiX9Tmzynqovw3Z7o",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V0FFNAKX3M3G8j18nTLahLQ6qVDLu1ry.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V0FAFF85VD3S2Q3aK4ygjOWTn3dVCqm8",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017V0FAH28X4Y7ZTnZQ36wZ2mpxOoQpUeiI",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V0FFNAKX3M3G8j18nTLahLQ6qVDLu1ry.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V0FAIU8K7Z4s0eER8DDGh7QbjcKBwpDT",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017V0IAAIVC4P32zYPj8bTJQXbmooIXr5qR",
+                    "name": "Condition Branch",
+                    "title": "XPath Query?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "XPath Query"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "XPath Query?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017V0IFCO3DWL5NhMmCfHgOoX4sBBbtDb9x",
+                        "name": "XPath Query",
+                        "title": "XPath Query",
+                        "type": "core.xpathquery",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "XPath Query",
+                          "input_xml": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\u003cbookstore\u003e\n  \u003cbook\u003e\n    \u003ctitle lang=\"en\"\u003eHarry Potter\u003c/title\u003e\n    \u003cprice\u003e29.99\u003c/price\u003e\n  \u003c/book\u003e\n  \u003cbook\u003e\n    \u003ctitle lang=\"en\"\u003eLearning XML\u003c/title\u003e\n    \u003cprice\u003e39.95\u003c/price\u003e\n  \u003c/book\u003e\n\u003c/bookstore\u003e",
+                          "skip_execution": false,
+                          "xpath_queries": [
+                            {
+                              "xpath_query": "//book",
+                              "xpath_query_name": "book",
+                              "xpath_query_type": "string"
+                            }
+                          ]
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017V0IAETG5V17ZhKSf41bWCW0G3j4epBbg",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017V0IAGGKC0E6j6qRKdFyWuWHBbJnBe8cP",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V0IFCO3DWL5NhMmCfHgOoX4sBBbtDb9x.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": true
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V0IAIBYJDL3GbncHl1No3lNSoZif7DWq",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017V0IAK4M5RZ0rTqqiGo0lMLYBvO1suhdW",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V0IFCO3DWL5NhMmCfHgOoX4sBBbtDb9x.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V0IAM67W7D6UU8RR21ABz2sxHEDec9eb",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_017V0L9RY17RF6krX3IAaWm4XEiHWjL5Gi1",
+                    "name": "Condition Branch",
+                    "title": "XSL Transform?",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$",
+                        "operator": "eq",
+                        "right_operand": "XSL Transform"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "XSL Transform?"
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_017V0LDOQMU6D4PGn3GakwcgxHhqbxSzTn1",
+                        "name": "XSL Transform",
+                        "title": "XSL Transform",
+                        "type": "core.xsl_transform",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": true,
+                          "display_name": "XSL Transform",
+                          "document": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\u003cbreakfast_menu\u003e\n  \u003cfood\u003e\n    \u003cname\u003eBelgian Waffles\u003c/name\u003e\n    \u003cprice\u003e$5.95\u003c/price\u003e\n    \u003cdescription\u003eTwo of our famous Belgian Waffles with plenty of real maple syrup\u003c/description\u003e\n    \u003ccalories\u003e650\u003c/calories\u003e\n  \u003c/food\u003e\n  \u003cfood\u003e\n    \u003cname\u003eStrawberry Belgian Waffles\u003c/name\u003e\n    \u003cprice\u003e$7.95\u003c/price\u003e\n    \u003cdescription\u003eLight Belgian waffles covered with strawberries and whipped cream\u003c/description\u003e\n    \u003ccalories\u003e900\u003c/calories\u003e\n  \u003c/food\u003e\n  \u003cfood\u003e\n    \u003cname\u003eBerry-Berry Belgian Waffles\u003c/name\u003e\n    \u003cprice\u003e$8.95\u003c/price\u003e\n    \u003cdescription\u003eLight Belgian waffles covered with an assortment of fresh berries and whipped cream\u003c/description\u003e\n    \u003ccalories\u003e900\u003c/calories\u003e\n  \u003c/food\u003e\n  \u003cfood\u003e\n    \u003cname\u003eFrench Toast\u003c/name\u003e\n    \u003cprice\u003e$4.50\u003c/price\u003e\n    \u003cdescription\u003eThick slices made from our homemade sourdough bread\u003c/description\u003e\n    \u003ccalories\u003e600\u003c/calories\u003e\n  \u003c/food\u003e\n  \u003cfood\u003e\n    \u003cname\u003eHomestyle Breakfast\u003c/name\u003e\n    \u003cprice\u003e$6.95\u003c/price\u003e\n    \u003cdescription\u003eTwo eggs, bacon or sausage, toast, and our ever-popular hash browns\u003c/description\u003e\n    \u003ccalories\u003e950\u003c/calories\u003e\n  \u003c/food\u003e\n\u003c/breakfast_menu\u003e",
+                          "skip_execution": false,
+                          "stylesheet": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\u003chtml xsl:version=\"1.0\" \n  xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"\u003e\n  \u003cbody style=\"font-family:Arial;font-size:12pt;background-color:#EEEEEE\"\u003e\n    \u003cxsl:for-each select=\"breakfast_menu/food\"\u003e\n      \u003cdiv style=\"background-color:teal;color:white;padding:4px\"\u003e\n        \u003cspan style=\"font-weight:bold\"\u003e\n          \u003cxsl:value-of select=\"name\"/\u003e - \n        \u003c/span\u003e\n        \u003cxsl:value-of select=\"price\"/\u003e\n      \u003c/div\u003e\n      \u003cdiv style=\"margin-left:20px;margin-bottom:1em;font-size:10pt\"\u003e\n        \u003cp\u003e\n          \u003cxsl:value-of select=\"description\"/\u003e\n          \u003cspan style=\"font-style:italic\"\u003e (\n            \u003cxsl:value-of select=\"calories\"/\u003e calories per serving)\n          \u003c/span\u003e\n        \u003c/p\u003e\n      \u003c/div\u003e\n    \u003c/xsl:for-each\u003e\n  \u003c/body\u003e\n\u003c/html\u003e"
+                        },
+                        "object_type": "definition_activity"
+                      },
+                      {
+                        "unique_name": "definition_activity_017V0L9VRZJO24uOagGl0Gqd5fKQGiUyZQV",
+                        "name": "Condition Block",
+                        "title": "Pass/Fail?",
+                        "type": "logic.if_else",
+                        "base_type": "activity",
+                        "properties": {
+                          "continue_on_failure": false,
+                          "display_name": "Pass/Fail?"
+                        },
+                        "object_type": "definition_activity",
+                        "blocks": [
+                          {
+                            "unique_name": "definition_activity_017V0L9XJRGUW0zQogkfwRX6W5lgrPPSNgB",
+                            "name": "Condition Branch",
+                            "title": "Pass",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V0LDOQMU6D4PGn3GakwcgxHhqbxSzTn1.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "true"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Pass"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V0L9ZJ1QBI706eaFzISIBvBmwDBPFC1d",
+                                "name": "Add Row to Table",
+                                "title": "Add Pass to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Pass to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Pass"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          },
+                          {
+                            "unique_name": "definition_activity_017V0LA183JTW2afFCu4i4DrRMSBc2rzrfC",
+                            "name": "Condition Branch",
+                            "title": "Fail",
+                            "type": "logic.condition_block",
+                            "base_type": "activity",
+                            "properties": {
+                              "condition": {
+                                "left_operand": "$activity.definition_activity_017V0LDOQMU6D4PGn3GakwcgxHhqbxSzTn1.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": "false"
+                              },
+                              "continue_on_failure": false,
+                              "display_name": "Fail"
+                            },
+                            "object_type": "definition_activity",
+                            "actions": [
+                              {
+                                "unique_name": "definition_activity_017V0LA36HJA7090KG8fw9dEGm0I8XsgpD4",
+                                "name": "Add Row to Table",
+                                "title": "Add Fail to Results table",
+                                "type": "core.addrowtotable",
+                                "base_type": "activity",
+                                "properties": {
+                                  "action_timeout": 180,
+                                  "continue_on_failure": false,
+                                  "display_name": "Add Fail to Results table",
+                                  "input_table": "$workflow.definition_workflow_017PXIBK0QQPD7A5jh2VVflsMEoyGHAj9O3.output.variable_workflow_017T63M8M21NP1dP4JclPCWIxsjjXIUC43L$",
+                                  "row": [
+                                    {
+                                      "key": "ActivityName",
+                                      "type": "string",
+                                      "value": "$activity.definition_activity_017T654A5Q2F54J6FKZa4IQWqbO1fYijjxg.input.source_array[@].activity_name$"
+                                    },
+                                    {
+                                      "key": "PassFail",
+                                      "type": "string",
+                                      "value": "Fail"
+                                    }
+                                  ]
+                                },
+                                "object_type": "definition_activity"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_017PXIPGV6UKM3vFJzyLn7ZGC7Dzrusahym",
+            "name": "To Lower",
+            "title": "To Lower",
+            "type": "core.string2lower",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "To Lower",
+              "source": "HELLO"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_017PXTER5FAZ860CFTvYz481rUsKpTYqWmy",
+            "name": "To Upper",
+            "title": "To Upper",
+            "type": "core.string2upper",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "To Upper",
+              "source": "skhjkfjhlsalfksaf"
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ]
+}
