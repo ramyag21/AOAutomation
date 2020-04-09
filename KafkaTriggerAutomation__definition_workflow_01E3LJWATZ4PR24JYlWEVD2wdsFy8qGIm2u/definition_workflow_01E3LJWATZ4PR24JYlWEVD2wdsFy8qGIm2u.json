@@ -7,6 +7,30 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "All Action Output Results",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01EHZ8DWKGDXX5BliQ3YUExX0dvZPaatz9S",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "Trigger Check",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01EXDFSANNNQT6VuT1rOHGZV9GwHiFGbYMr",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "tabletype_01E591O5W60KD3z44gnmNeTIuEnuLa3hAxE",
         "properties": {
           "scope": "local",
@@ -39,6 +63,11 @@
           "value": "Failed"
         }
       ],
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
       "skip_execution": false,
       "target": {
         "execute_on_target_group": true,
@@ -193,7 +222,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "api_body": "{\n  \"name\": \"RG KAFKA No SSL, NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"title\": \"RG KAFKA No SSL, NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"description\": \"RG Automation No SSL No Auth\",\n  \"properties\": {\n    \"disable_certificate_validation\": true,\n    \"no_runtime_user\": true,\n    \"port\": 9092,\n    \"ssl_enable\": false,\n    \"display_name\": \"RG KAFKA No SSL, NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n    \"host\": \"10.88.38.124\"\n  },\n  \"type\": \"kafka.endpoint\",\n  \"base_type\": \"target\"\n}",
+              "api_body": "{\n  \"name\": \"RG KAFKA No SSL, NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.instance_id$\",\n  \"title\": \"RG KAFKA No SSL, NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.instance_id$\",\n  \"description\": \"RG Automation No SSL No Auth\",\n  \"properties\": {\n    \"disable_certificate_validation\": true,\n    \"no_runtime_user\": true,\n    \"port\": 9092,\n    \"ssl_enable\": false,\n    \"display_name\": \"RG KAFKA No SSL, NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.instance_id$\",\n    \"host\": \"10.88.38.124\"\n  },\n  \"type\": \"kafka.endpoint\",\n  \"base_type\": \"target\"\n}",
               "api_call_method": "POST",
               "continue_on_failure": false,
               "display_name": "Create Kafka Target with NO SSL and NO Authentiation",
@@ -240,7 +269,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "api_body": "{\n  \"name\": \"RG KAFKA With SSL, NO Authentiation $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"title\": \"RG KAFKA With SSL, NO Authentiation $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n  \"description\": \"RG Automation SSL Enabled No Auth\",\n  \"properties\": {\n    \"disable_certificate_validation\": true,\n    \"no_runtime_user\": true,\n    \"port\": 9093,\n    \"ssl_enable\": true,\n    \"display_name\": \"RG KAFKA With SSL, NO Authentiation $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n    \"host\": \"10.88.38.124\"\n  },\n  \"type\": \"kafka.endpoint\",\n  \"base_type\": \"target\"\n}",
+              "api_body": "{\n  \"name\": \"RG KAFKA With SSL,NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.instance_id$\",\n  \"title\": \"RG KAFKA With SSL,NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.instance_id$\",\n  \"description\": \"RG Automation SSL Enabled No Auth\",\n  \"properties\": {\n    \"disable_certificate_validation\": true,\n    \"no_runtime_user\": true,\n    \"port\": 9093,\n    \"ssl_enable\": true,\n    \"display_name\": \"RG KAFKA With SSL,NO Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.instance_id$\",\n    \"host\": \"10.88.38.124\"\n  },\n  \"type\": \"kafka.endpoint\",\n  \"base_type\": \"target\"\n}",
               "api_call_method": "POST",
               "continue_on_failure": false,
               "display_name": "Create Kafka Target SSL ENABLED and NO Authentiation",
@@ -302,7 +331,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "api_body": "{\n   \"title\":\"RG Kafka Event No SSL No Auth$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n   \"target_id\":$activity.definition_activity_01E4DV8SQGEHB5N20IBeqxwbwYaJE6hgVH5.output.jsonpath_queries.TargetNoSSLNoAuthID$,\n   \"type\":\"kafka.event\",\n   \"base_type\":\"event\",\n   \"properties\":{\n      \"title\":\"RG Kafka Event No SSL No Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n      \"topic_name\":\"tl-kafka-topic\",\n      \"target_id\":$activity.definition_activity_01E4DV8SQGEHB5N20IBeqxwbwYaJE6hgVH5.output.jsonpath_queries.TargetNoSSLNoAuthID$,\n      \"conditions\":{\n         \"left_operand\":{\n            \"left_operand\":{\n               \"operator\":\"eq\",\n               \"left_operand\":\"[$output.headers[0].header_key$]\",\n               \"right_operand\":\"key1\"\n            },\n            \"right_operand\":{\n               \"left_operand\":\"[$output.headers[0].header_value$]\",\n               \"right_operand\":\"value1\",\n               \"operator\":\"eq\"\n            },\n            \"operator\":\"and\"\n         },\n         \"right_operand\":{\n            \"left_operand\":\"[$output.message$]\",\n            \"right_operand\":\"str*\",\n            \"operator\":\"mw\"\n         },\n         \"operator\":\"and\"\n      }\n   }\n}",
+              "api_body": "{\n   \"title\":\"RG Kafka Event No SSL No Auth$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n   \"target_id\": \"$activity.definition_activity_01E4DV8SQGEHB5N20IBeqxwbwYaJE6hgVH5.output.jsonpath_queries.TargetNoSSLNoAuthID$\",\n   \"type\":\"kafka.event\",\n   \"base_type\":\"event\",\n   \"properties\":{\n      \"title\":\"RG Kafka Event No SSL No Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n      \"topic_name\":\"tl-kafka-topic\",\n      \"target_id\": \"$activity.definition_activity_01E4DV8SQGEHB5N20IBeqxwbwYaJE6hgVH5.output.jsonpath_queries.TargetNoSSLNoAuthID$\",\n      \"conditions\":{\n         \"left_operand\":{\n            \"left_operand\":{\n               \"operator\":\"eq\",\n               \"left_operand\":\"[$output.headers[0].header_key$]\",\n               \"right_operand\":\"key1\"\n            },\n            \"right_operand\":{\n               \"left_operand\":\"[$output.headers[0].header_value$]\",\n               \"right_operand\":\"value1\",\n               \"operator\":\"eq\"\n            },\n            \"operator\":\"and\"\n         },\n         \"right_operand\":{\n            \"left_operand\":\"[$output.message$]\",\n            \"right_operand\":\"str*\",\n            \"operator\":\"mw\"\n         },\n         \"operator\":\"and\"\n      }\n   }\n}",
               "api_call_method": "POST",
               "continue_on_failure": false,
               "display_name": "Create Kafka Event - No SSL No Auth",
@@ -364,7 +393,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "api_body": "{\n   \"title\":\"RG Kafka Event SSL Enabled No Auth$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n   \"target_id\":$activity.definition_activity_01E4DVZK3VGRL537qxsIkflUBX6yIa1ESb2.output.jsonpath_queries.TargetSSLNoAuthID$,\n   \"type\":\"kafka.event\",\n   \"base_type\":\"event\",\n   \"properties\":{\n      \"title\":\"RG Kafka Event SSL Enabled No Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n      \"topic_name\":\"tl-kafka-topic\",\n      \"target_id\":$activity.definition_activity_01E4DVZK3VGRL537qxsIkflUBX6yIa1ESb2.output.jsonpath_queries.TargetSSLNoAuthID$,\n      \"conditions\":{\n               \"operator\":\"eq\",\n               \"left_operand\":\"[$output.headers[0].header_key$]\",\n               \"right_operand\":\"SSL No Auth\"\n      }\n   }\n}",
+              "api_body": "{\n   \"title\":\"RG Kafka Event SSL Enabled No Auth$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n   \"target_id\": \"$activity.definition_activity_01E4DVZK3VGRL537qxsIkflUBX6yIa1ESb2.output.jsonpath_queries.TargetSSLNoAuthID$\",\n   \"type\":\"kafka.event\",\n   \"base_type\":\"event\",\n   \"properties\":{\n      \"title\":\"RG Kafka Event SSL Enabled No Auth $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n      \"topic_name\":\"tl-kafka-topic\",\n      \"target_id\": \"$activity.definition_activity_01E4DVZK3VGRL537qxsIkflUBX6yIa1ESb2.output.jsonpath_queries.TargetSSLNoAuthID$\",\n      \"conditions\":{\n               \"operator\":\"eq\",\n               \"left_operand\":\"[$output.headers[0].header_key$]\",\n               \"right_operand\":\"SSL No Auth\"\n      }\n   }\n}",
               "api_call_method": "POST",
               "continue_on_failure": false,
               "display_name": "Create Kafka Event - SSL Enabled No Auth",
@@ -426,7 +455,7 @@
             "base_type": "activity",
             "properties": {
               "action_timeout": 180,
-              "api_body": "{\n   \"title\":\"RG Kafka Event SSL Enabled Cert$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n   \"target_id\":$activity.definition_activity_01E4DTSSFK2XR7PvJcqxOlq6sfGOJCEWdY5.output.jsonpath_queries.TargetCertificateID$,\n   \"type\":\"kafka.event\",\n   \"base_type\":\"event\",\n   \"properties\":{\n      \"title\":\"RG Kafka Event SSL Enabled Cert $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n      \"topic_name\":\"tl-kafka-topic\",\n      \"target_id\":$activity.definition_activity_01E4DTSSFK2XR7PvJcqxOlq6sfGOJCEWdY5.output.jsonpath_queries.TargetCertificateID$,\n      \"conditions\":{\n               \"operator\":\"eq\",\n               \"left_operand\":\"[$output.headers[0].header_key$]\",\n               \"right_operand\":\"SSL With Auth\"\n      }\n   }\n}",
+              "api_body": "{\n   \"title\":\"RG Kafka Event SSL Enabled Cert$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n   \"target_id\": \"$activity.definition_activity_01E4DTSSFK2XR7PvJcqxOlq6sfGOJCEWdY5.output.jsonpath_queries.TargetCertificateID$\",\n   \"type\":\"kafka.event\",\n   \"base_type\":\"event\",\n   \"properties\":{\n      \"title\":\"RG Kafka Event SSL Enabled Cert $workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n      \"topic_name\":\"tl-kafka-topic\",\n      \"target_id\": \"$activity.definition_activity_01E4DTSSFK2XR7PvJcqxOlq6sfGOJCEWdY5.output.jsonpath_queries.TargetCertificateID$\",\n      \"conditions\":{\n               \"operator\":\"eq\",\n               \"left_operand\":\"[$output.headers[0].header_key$]\",\n               \"right_operand\":\"SSL With Auth\"\n      }\n   }\n}",
               "api_call_method": "POST",
               "continue_on_failure": false,
               "display_name": "Create Kafka Event - SSL Cert",
@@ -458,6 +487,68 @@
                 {
                   "jsonpath_query": "$..id",
                   "jsonpath_query_name": "EventIDSSLCert",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01EX9M1QLC3HT0nNv1LcfJpTfd2yUyC0ArV",
+        "name": "Group",
+        "title": "Create Kafka Event - Condition Checks",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Create Kafka Event - Condition Checks",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01EX9M1SPVPDZ692GX3EmobPF0wo4HbayCB",
+            "name": "Generic CCS API Request",
+            "title": "Create Kafka Event - Not Equal and Matches Wildcard combination",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n   \"title\":\"RG Kafka Event No SSL No Auth$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n   \"target_id\": \"$activity.definition_activity_01E4DV8SQGEHB5N20IBeqxwbwYaJE6hgVH5.output.jsonpath_queries.TargetNoSSLNoAuthID$\",\n   \"type\":\"kafka.event\",\n   \"base_type\":\"event\",\n   \"properties\":{\n      \"title\":\"RG Kafka Event NE$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.start_time$\",\n      \"topic_name\":\"tl-kafka-topic\",\n      \"target_id\": \"$activity.definition_activity_01E4DV8SQGEHB5N20IBeqxwbwYaJE6hgVH5.output.jsonpath_queries.TargetNoSSLNoAuthID$\",\n      \"conditions\":{\n         \"left_operand\":{\n            \"left_operand\":{\n               \"operator\":\"eq\",\n               \"left_operand\":\"[$output.headers[0].header_key$]\",\n               \"right_operand\":\"key1\"\n            },\n            \"right_operand\":{\n               \"left_operand\":\"[$output.headers[0].header_value$]\",\n               \"right_operand\":\"value1\",\n               \"operator\":\"ne\"\n            },\n            \"operator\":\"and\"\n         },\n         \"right_operand\":{\n            \"left_operand\":\"[$output.message$]\",\n            \"right_operand\":\"str*\",\n            \"operator\":\"mw\"\n         },\n         \"operator\":\"and\"\n      }\n   }\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": false,
+              "display_name": "Create Kafka Event - Not Equal and Matches Wildcard combination",
+              "relative_url": "be-console/api/v1/events",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01EX9M1TE8VBR2EOzm8zwPQbMmh9Jy5Lw88",
+            "name": "JSONPath Query",
+            "title": "Extract Event ID - Combination",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extract Event ID - Combination",
+              "input_json": "$activity.definition_activity_01E4DRUAW059057Kq8hUVb6Q01jZhEL9NQa.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..id",
+                  "jsonpath_query_name": "EventIDNE",
                   "jsonpath_query_type": "string"
                 }
               ],
@@ -555,7 +646,7 @@
           {
             "unique_name": "definition_activity_01E3LK1H4UGYW5T5wxVUwY6LwQmKMPeBck8",
             "name": "Generic CCS API Request",
-            "title": "Adding Event to the Workflow",
+            "title": "Adding Auth Event to the Workflow",
             "type": "ccs.api_request",
             "base_type": "activity",
             "properties": {
@@ -563,7 +654,32 @@
               "api_body": "{\n  \"type\": \"event\",\n  \"disabled\": false,\n  \"name\": \"Event with No Auth No SSL\",\n  \"ref_id\": \"$activity.definition_activity_01E4DYIJAYFW94YfN1GRW3QBdBfgNpTWbFI.output.jsonpath_queries.EventIDNOAuthNOSSL$\",\n  \"title\": \"Event with No Auth No SSL\"\n}",
               "api_call_method": "POST",
               "continue_on_failure": true,
-              "display_name": "Adding Event to the Workflow",
+              "display_name": "Adding Auth Event to the Workflow",
+              "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$/triggers",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01EX9T7XD32BP1WzwYnPp4qrsvYvHlXWard",
+            "name": "Generic CCS API Request",
+            "title": "Adding Combination Check Event to the Workflow",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_body": "{\n  \"type\": \"event\",\n  \"disabled\": false,\n  \"name\": \"Event with No Auth No SSL\",\n  \"ref_id\": \"$activity.definition_activity_01EX9M1TE8VBR2EOzm8zwPQbMmh9Jy5Lw88.output.jsonpath_queries.EventIDNE$\",\n  \"title\": \"Event with No Auth No SSL\"\n}",
+              "api_call_method": "POST",
+              "continue_on_failure": true,
+              "display_name": "Adding Combination Check Event to the Workflow",
               "relative_url": "be-console/api/v1/workflows/$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$/triggers",
               "runtime_user": {
                 "override_target_runtime_user": false,
@@ -948,6 +1064,235 @@
         ]
       },
       {
+        "unique_name": "definition_activity_01EHXWEC1JSSS2t0Mlb2zN9aO7TDw8dljkd",
+        "name": "Condition Block",
+        "title": "All Actions Result",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "All Actions Result",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01EHXWEF97M3K2yqzECZYvm94RFfau5HNiU",
+            "name": "Condition Branch",
+            "title": "PASS",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": {
+                  "left_operand": {
+                    "left_operand": {
+                      "left_operand": {
+                        "left_operand": {
+                          "left_operand": {
+                            "left_operand": {
+                              "left_operand": {
+                                "left_operand": {
+                                  "left_operand": {
+                                    "left_operand": {
+                                      "left_operand": {
+                                        "left_operand": {
+                                          "left_operand": "$activity.definition_activity_01E3LJXPDBWVZ69tdgVN4GgYPAyy2NiwvE1.output.succeeded$",
+                                          "operator": "eq",
+                                          "right_operand": true
+                                        },
+                                        "operator": "and",
+                                        "right_operand": {
+                                          "left_operand": "$activity.definition_activity_01E3LJYCU6W342jexv6Bk8CIzcONefiO2sw.output.succeeded$",
+                                          "operator": "eq",
+                                          "right_operand": true
+                                        }
+                                      },
+                                      "operator": "and",
+                                      "right_operand": {
+                                        "left_operand": "$activity.definition_activity_01E3LJX0K637D1U5PHwzie5XZgVoPUPFoqx.output.succeeded$",
+                                        "operator": "eq",
+                                        "right_operand": true
+                                      }
+                                    },
+                                    "operator": "and",
+                                    "right_operand": {
+                                      "left_operand": "$activity.definition_activity_01E3LJXCKODVE2lWAmc0O6jplDaqGiUz8bN.output.succeeded$",
+                                      "operator": "eq",
+                                      "right_operand": true
+                                    }
+                                  },
+                                  "operator": "and",
+                                  "right_operand": {
+                                    "left_operand": "$activity.definition_activity_01E4DRUAW059057Kq8hUVb6Q01jZhEL9NQa.output.succeeded$",
+                                    "operator": "eq",
+                                    "right_operand": true
+                                  }
+                                },
+                                "operator": "and",
+                                "right_operand": {
+                                  "left_operand": "$activity.definition_activity_01E4E28IY8QVS4H4Rd8VKiJuhqSHeNdOCul.output.succeeded$",
+                                  "operator": "eq",
+                                  "right_operand": true
+                                }
+                              },
+                              "operator": "and",
+                              "right_operand": {
+                                "left_operand": "$activity.definition_activity_01E4E9NYABAKT1eR8x1zshImZzOpiiyaKTJ.output.succeeded$",
+                                "operator": "eq",
+                                "right_operand": true
+                              }
+                            },
+                            "operator": "and",
+                            "right_operand": {
+                              "left_operand": "$activity.definition_activity_01E3LK0GS2WJB2S1n3Oi7LwbDwCrWj0qOyG.output.succeeded$",
+                              "operator": "eq",
+                              "right_operand": true
+                            }
+                          },
+                          "operator": "and",
+                          "right_operand": {
+                            "left_operand": "$activity.definition_activity_01E4EH3NNTRVX4flunz1HMus9wwATHqU2C2.output.succeeded$",
+                            "operator": "eq",
+                            "right_operand": true
+                          }
+                        },
+                        "operator": "and",
+                        "right_operand": {
+                          "left_operand": "$activity.definition_activity_01E4EH3P74EK56fCSYBiyEMsuEewAB9Lqkn.output.succeeded$",
+                          "operator": "eq",
+                          "right_operand": true
+                        }
+                      },
+                      "operator": "and",
+                      "right_operand": {
+                        "left_operand": "$activity.definition_activity_01E4EH3PZL8NB4wjotxmSHob7a2YoLVbaHP.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": true
+                      }
+                    },
+                    "operator": "and",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01E4EJID1NDWY64Y1AM874aof7DuBVAu89O.output.succeeded$",
+                      "operator": "eq",
+                      "right_operand": true
+                    }
+                  },
+                  "operator": "and",
+                  "right_operand": {
+                    "left_operand": "$activity.definition_activity_01E4EJIET6R3Y4DbcJukGhgD52SqHhIqYjF.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": true
+                  }
+                },
+                "operator": "and",
+                "right_operand": {
+                  "left_operand": "$activity.definition_activity_01E4EJIFO7Z376WlX4Jqma1lK26c9ih2Iq0.output.succeeded$",
+                  "operator": "eq",
+                  "right_operand": true
+                }
+              },
+              "continue_on_failure": false,
+              "display_name": "PASS",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01EHYHBSHUGKC6wTKC8G0qumuJNsR6s2iuQ",
+                "name": "Set Variables",
+                "title": "All Actions Should Pass",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "All Actions Should Pass",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01EHZ8DWKGDXX5BliQ3YUExX0dvZPaatz9S$",
+                      "variable_value_new": "✅✔ All Trigger with workflow Actions Passed -100%"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01EHXWEGBJG113ZzgLeFmw9yzumJR2MPqfW",
+            "name": "Condition Branch",
+            "title": "FAIL",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": {
+                  "left_operand": {
+                    "left_operand": {
+                      "left_operand": {
+                        "left_operand": "$activity.definition_activity_01E3LL4D28QYO2Gj8kraTNiZIxHcaXUsVvm.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": false
+                      },
+                      "operator": "or",
+                      "right_operand": {
+                        "left_operand": "$activity.definition_activity_01E3LJYCU6W342jexv6Bk8CIzcONefiO2sw.output.succeeded$",
+                        "operator": "eq",
+                        "right_operand": false
+                      }
+                    },
+                    "operator": "or",
+                    "right_operand": {
+                      "left_operand": "$activity.definition_activity_01E3LL4D28QYO2Gj8kraTNiZIxHcaXUsVvm.output.succeeded$",
+                      "operator": "eq",
+                      "right_operand": false
+                    }
+                  },
+                  "operator": "or",
+                  "right_operand": {
+                    "left_operand": "$activity.definition_activity_01E3LJWPKNPH25FInrwXVVYNmWB6S1jaRsI.output.succeeded$",
+                    "operator": "eq",
+                    "right_operand": false
+                  }
+                },
+                "operator": "or",
+                "right_operand": {
+                  "left_operand": "$activity.definition_activity_01E4DCT75S7P54gkDE27YCUT5GtOxxr8IGz.output.succeeded$",
+                  "operator": "eq",
+                  "right_operand": false
+                }
+              },
+              "continue_on_failure": false,
+              "display_name": "FAIL",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01EHYQSM3FCHL1N2QIqCZUo8NR3DqakMHmV",
+                "name": "Set Variables",
+                "title": "If any action fails",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "If any action fails",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01EHZ8DWKGDXX5BliQ3YUExX0dvZPaatz9S$",
+                      "variable_value_new": "❌⭕Some Workflow with Schedule actions failed please check the instance :\n$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.output.instance_id$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "unique_name": "definition_activity_01E4ITJ4W9VBA3tY3jfajDd4ne1vk8DT8ga",
         "name": "Group",
         "title": "Kafka Trigger scenarios",
@@ -1004,12 +1349,12 @@
           {
             "unique_name": "definition_activity_01E592OV1OGW31VpMYZBvv34d1xdydwsM5D",
             "name": "Group",
-            "title": "Run Test Case1",
+            "title": "Run Test Case1 - SSL No Auth",
             "type": "logic.group",
             "base_type": "activity",
             "properties": {
               "continue_on_failure": false,
-              "display_name": "Run Test Case1",
+              "display_name": "Run Test Case1 - SSL No Auth",
               "skip_execution": false
             },
             "object_type": "definition_activity",
@@ -1237,12 +1582,12 @@
           {
             "unique_name": "definition_activity_01E59337R08NC4am52qn8PPFaEEA17QG0Oj",
             "name": "Group",
-            "title": "Run Test Case2",
+            "title": "Run Test Case2 - No Auth No SSL",
             "type": "logic.group",
             "base_type": "activity",
             "properties": {
               "continue_on_failure": false,
-              "display_name": "Run Test Case2",
+              "display_name": "Run Test Case2 - No Auth No SSL",
               "skip_execution": false
             },
             "object_type": "definition_activity",
@@ -1419,7 +1764,438 @@
             ]
           },
           {
-            "unique_name": "definition_activity_01E4J4OCIC7GU7ZbrR3k2GDNm7mmU513lB2",
+            "unique_name": "definition_activity_01EX9ZTE7JH452SInmXGS3aN9U0ZJtu0Gig",
+            "name": "Submit Kafka Message",
+            "title": "Submit Message - Not Equal and Matching Wildcard",
+            "type": "kafka.submitmessage",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Submit Message - Not Equal and Matching Wildcard",
+              "headers": [
+                {
+                  "key": "key1",
+                  "value": "value2"
+                }
+              ],
+              "message": "{\"string1\": 1}",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target_group_criteria": true,
+                "target_group": {
+                  "use_criteria": {
+                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                    "conditions": [
+                      {
+                        "left_operand": "$targetgroup.kafka endpoint.input.description$",
+                        "operator": "eq",
+                        "right_operand": "RG Automation No SSL No Auth"
+                      }
+                    ]
+                  }
+                }
+              },
+              "topic": "tl-kafka-topic"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01EXAHEZ9J2TI3YdtsSIWxpD4OjzCT5ihFz",
+            "name": "Group",
+            "title": "Run Test Case 3 - NE and MW checks WIP",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Run Test Case 3 - NE and MW checks WIP",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01EXAHF17X6JD1B6SlpVzefK0zvmhAWw8XL",
+                "name": "Sleep",
+                "title": "Sleep for 30s",
+                "type": "core.sleep",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Sleep for 30s",
+                  "skip_execution": false,
+                  "sleep_interval": 30
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01EXAHF1X0NXK2eiPqCZ8u0NcO3s7D55SQh",
+                "name": "Generic CCS API Request",
+                "title": "GET workflow instances",
+                "type": "ccs.api_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "api_call_method": "GET",
+                  "continue_on_failure": false,
+                  "display_name": "GET workflow instances",
+                  "relative_url": "be-console/api/v1/instances?workflow_id=$activity.definition_activity_01E3LK0SZG9IZ0AKcIeXfPk60wTGN1TYdEo.output.jsonpath_queries.Workflow ID$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01EXAHF2NJNEO0Zof8gUjJXa9A3fEZ56eGf",
+                "name": "JSONPath Query",
+                "title": "Extract Instance Status",
+                "type": "corejava.jsonpathquery",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": true,
+                  "display_name": "Extract Instance Status",
+                  "input_json": "$activity.definition_activity_01E5933AZWG641uwx1HoualKllelV2GKWlc.output.response_body$",
+                  "jsonpath_queries": [
+                    {
+                      "jsonpath_query": "$..status.state",
+                      "jsonpath_query_name": "InstanceStatus",
+                      "jsonpath_query_type": "string"
+                    }
+                  ],
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01EXAHF3FDBVZ0SI7txwyjFtwvWo66YlOgd",
+                "name": "Condition Block",
+                "title": "Did workflow trigger?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Did workflow trigger?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01EXAHF4751WS1OqXpyxoD1LmtwsCnpNqzJ",
+                    "name": "Condition Branch",
+                    "title": "YES",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01E5933C5E32D6B3KEYMQjBzDcNlVVwl83E.output.jsonpath_queries.InstanceStatus$",
+                        "operator": "eq",
+                        "right_operand": "success"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "YES",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01EXAHF50MZM32prBMfqiKMEhqzQaPlpoh3",
+                        "name": "Add Row to Table",
+                        "title": "Test Passed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Passed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "No SSL No Auth - Duplicate Headers"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Passed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01EXAHF6U4MQG4HV2Po7JUJn0QKPffSA8u1",
+                    "name": "Condition Branch",
+                    "title": "NO",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$activity.definition_activity_01E5933AZWG641uwx1HoualKllelV2GKWlc.output.response_body$",
+                        "operator": "eq",
+                        "right_operand": ""
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "NO",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01EXAHF7OHSJO3hMdvr84rI4pBjs26eKgfn",
+                        "name": "Add Row to Table",
+                        "title": "Test Failed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Failed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "No SSL No Auth - Duplicate Headers"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Failed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01EXDEYF41V1Q78VALuaW12EXGEkqF5kzeX",
+            "name": "Group",
+            "title": "Run test case 4 - Verify trigger references",
+            "type": "logic.group",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Run test case 4 - Verify trigger references",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01E4J4OCIC7GU7ZbrR3k2GDNm7mmU513lB2",
+                "name": "Submit Kafka Message",
+                "title": "Submit Message - Trigger Workflow",
+                "type": "kafka.submitmessage",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Submit Message - Trigger Workflow",
+                  "headers": [
+                    {
+                      "key": "key1",
+                      "value": "value1"
+                    },
+                    {
+                      "key": "key1",
+                      "value": "value1"
+                    }
+                  ],
+                  "message": "{\"string1\": 1}",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target_group_criteria": true,
+                    "target_group": {
+                      "use_criteria": {
+                        "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                        "conditions": [
+                          {
+                            "left_operand": "$targetgroup.kafka endpoint.input.description$",
+                            "operator": "eq",
+                            "right_operand": "RG Automation No SSL No Auth"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "topic": "tl-kafka-topic"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01EXAVCZTQPST2ilKkYyjyINFdzicM12eIk",
+                "name": "RG trigger References",
+                "title": "RG trigger References",
+                "type": "workflow.sub_workflow",
+                "base_type": "subworkflow",
+                "properties": {
+                  "display_name": "RG trigger References",
+                  "runtime_user": {
+                    "target_default": true
+                  },
+                  "target": {
+                    "no_target": true
+                  },
+                  "workflow_id": "definition_workflow_01EXAS395D31M15bGOk1uA6Y7sj3L2RngG0"
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01EXDFG9Q3AP44wVx1vWdaexyXnqjy7ICwQ",
+                "name": "Set Variables",
+                "title": "Set Variables",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables",
+                  "skip_execution": false,
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01EXDFSANNNQT6VuT1rOHGZV9GwHiFGbYMr$",
+                      "variable_value_new": "$activity.definition_activity_01EXAVCZTQPST2ilKkYyjyINFdzicM12eIk.output.variable_workflow_01EXATTBZH1BV6sqSzBhoCYFYXOm8fW3ZZw$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01EXDYDSFTZ8B4vjqv6DaiCaxpftwwFGguA",
+                "name": "Condition Block",
+                "title": "Verify if trigger reference got resolved?",
+                "type": "logic.if_else",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Verify if trigger reference got resolved?",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "blocks": [
+                  {
+                    "unique_name": "definition_activity_01EXDYDUK62VP2BuIjesPFqb1gfbmLZbhsm",
+                    "name": "Condition Branch",
+                    "title": "Yes",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01EXDFSANNNQT6VuT1rOHGZV9GwHiFGbYMr$",
+                        "operator": "eq",
+                        "right_operand": "test"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "Yes",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01EXE0WUC76OA4GKU6qm5nHpFvqBcBDppjF",
+                        "name": "Add Row to Table",
+                        "title": "Test Passed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Passed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "Verify Trigger References"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Passed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  },
+                  {
+                    "unique_name": "definition_activity_01EXDYDVE584R4mclkYa7uK9cWhF6FZZMh2",
+                    "name": "Condition Branch",
+                    "title": "No",
+                    "type": "logic.condition_block",
+                    "base_type": "activity",
+                    "properties": {
+                      "condition": {
+                        "left_operand": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01EXDFSANNNQT6VuT1rOHGZV9GwHiFGbYMr$",
+                        "operator": "ne",
+                        "right_operand": "test"
+                      },
+                      "continue_on_failure": false,
+                      "display_name": "No",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "actions": [
+                      {
+                        "unique_name": "definition_activity_01EXE1UV6PWS40fsu2crOkPq1P6ha3jqvEV",
+                        "name": "Add Row to Table",
+                        "title": "Test Failed",
+                        "type": "core.addrowtotable",
+                        "base_type": "activity",
+                        "properties": {
+                          "action_timeout": 180,
+                          "continue_on_failure": false,
+                          "display_name": "Test Failed",
+                          "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                          "row": [
+                            {
+                              "key": "TestScenarios",
+                              "type": "string",
+                              "value": "Verify Trigger References"
+                            },
+                            {
+                              "key": "Status",
+                              "type": "string",
+                              "value": "Failed"
+                            }
+                          ],
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01EXAW4ZENZEW4HkQawdwwsrTCZFtCv7VpD",
             "name": "Submit Kafka Message",
             "title": "Submit Message - No Auth No SSL ",
             "type": "kafka.submitmessage",
@@ -1466,12 +2242,12 @@
           {
             "unique_name": "definition_activity_01E597P6RXW7750hlvE3I2YnNOnpFTlTQ2D",
             "name": "Group",
-            "title": "Run Test Case3",
+            "title": "Run Test Case 5  No Auth No SSL",
             "type": "logic.group",
             "base_type": "activity",
             "properties": {
               "continue_on_failure": false,
-              "display_name": "Run Test Case3",
+              "display_name": "Run Test Case 5  No Auth No SSL",
               "skip_execution": false
             },
             "object_type": "definition_activity",
@@ -1691,12 +2467,12 @@
           {
             "unique_name": "definition_activity_01E59JKXXDLWE1IcXjRDDeMJcThGDd3tf00",
             "name": "Group",
-            "title": "Run Test Case4",
+            "title": "Run Test Case 6  SSL Cert",
             "type": "logic.group",
             "base_type": "activity",
             "properties": {
               "continue_on_failure": false,
-              "display_name": "Run Test Case4",
+              "display_name": "Run Test Case 6  SSL Cert",
               "skip_execution": false
             },
             "object_type": "definition_activity",
@@ -1867,6 +2643,272 @@
                         "object_type": "definition_activity"
                       }
                     ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01EXF4LD953KX4paszINyEAnoWXLJ5ANPQN",
+        "name": "Submit Kafka Message",
+        "title": "Submit Message - Large Message",
+        "type": "kafka.submitmessage",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Submit Message - Large Message",
+          "headers": [
+            {
+              "key": "SSL With Auth",
+              "value": ""
+            }
+          ],
+          "message": "{\n  \"string1\": \"HiAs you heardAsAs you heard on thAs you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.e Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space. you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space. on As you As youAs yAsAs you heard As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space. you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.ou heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space. heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.As you heard on the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.the Weekly Q\u0026A broadcast this morning, Webex has had to expand at an unprecedented rate over the past few weeks to meet increased demand. To ensure that we are delivering the full quality and capacity of Webex to our customers—including those in healthcare—we must free up additional storage space.\"\n}",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target_group_criteria": true,
+            "target_group": {
+              "use_criteria": {
+                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                "conditions": [
+                  {
+                    "left_operand": "$targetgroup.kafka endpoint.input.description$",
+                    "operator": "eq",
+                    "right_operand": "RG Automation SSL"
+                  }
+                ]
+              }
+            }
+          },
+          "topic": "tl-kafka-topic"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01EXFU0BA6Y1C1Gi8xsb91nKPnrX52zWBcq",
+        "name": "Submit Kafka Message",
+        "title": "Submit Message - Large Message",
+        "type": "kafka.submitmessage",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Submit Message - Large Message",
+          "headers": [
+            {
+              "key": "SSL With Auth",
+              "value": ""
+            }
+          ],
+          "message": "{\n  \"workflow\": {\n    \"unique_name\": \"definition_workflow_01EXB6YV6P4XA53TL5bNQnNlh8uP9KDD6Vx\",\n    \"name\": \"AMQP Publish Message\",\n    \"title\": \"AMQP Publish Message\",\n    \"type\": \"generic.workflow\",\n    \"base_type\": \"workflow\",\n    \"variables\": [\n      {\n        \"schema_id\": \"datatype.string\",\n        \"properties\": {\n          \"value\": \"\",\n          \"scope\": \"input\",\n          \"name\": \"Enter Message\",\n          \"type\": \"datatype.string\",\n          \"is_required\": false\n        },\n        \"unique_name\": \"variable_workflow_01EXBI6W6O5701f3787C8LS7TP0ukAcDoIb\",\n        \"object_type\": \"variable_workflow\"\n      }\n    ],\n    \"properties\": {\n      \"atomic\": {\n        \"is_atomic\": false\n      },\n      \"delete_workflow_instance\": false,\n      \"display_name\": \"AMQP Publish Message\",\n      \"runtime_user\": {\n        \"override_target_runtime_user\": false,\n        \"specify_on_workflow_start\": false,\n        \"target_default\": true\n      },\n      \"target\": {\n        \"target_type\": \"amqp.endpoint\",\n        \"specify_on_workflow_start\": true\n      }\n    },\n    \"object_type\": \"definition_workflow\",\n    \"actions\": [\n      {\n        \"unique_name\": \"definition_activity_01EXBO2XP63WZ5VLnjcY2HjU2vgLL3AIrjS\",\n        \"name\": \"Publish AMQP Message\",\n        \"title\": \"Publish AMQP Message\",\n        \"type\": \"amqp.publish_message\",\n        \"base_type\": \"activity\",\n        \"properties\": {\n          \"action_timeout\": 180,\n          \"body\": \"$workflow.definition_workflow_01EXB6YV6P4XA53TL5bNQnNlh8uP9KDD6Vx.input.variable_workflow_01EXBI6W6O5701f3787C8LS7TP0ukAcDoIb$\",\n          \"continue_on_failure\": false,\n          \"delivery_mode\": 1,\n          \"display_name\": \"Publish AMQP Message\",\n          \"exchange_name\": \"CA-Qetet5.2.0-Exchange\",\n          \"routing_key\": \"CA- Qetest5.2.0\",\n          \"runtime_user\": {\n            \"override_target_runtime_user\": false,\n            \"target_default\": true\n          },\n          \"skip_execution\": false,\n          \"target\": {\n            \"override_workflow_target\": false,\n            \"override_workflow_target_group_criteria\": false,\n            \"use_workflow_target\": true,\n            \"use_workflow_target_group\": false\n          }\n        },\n        \"object_type\": \"definition_activity\"\n      }\n    ],\n    \"categories\": [\n      \"category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf\"\n    ]\n  }\n}",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target_group_criteria": true,
+            "target_group": {
+              "use_criteria": {
+                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                "conditions": [
+                  {
+                    "left_operand": "$targetgroup.kafka endpoint.input.description$",
+                    "operator": "eq",
+                    "right_operand": "RG Automation SSL"
+                  }
+                ]
+              }
+            }
+          },
+          "topic": "tl-kafka-topic"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01EXF8P3E0LOR5kIJKVVIJLC3nVwuMhy9Nf",
+        "name": "Group",
+        "title": "Run Test Case 7 - Large Message",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Run Test Case 7 - Large Message",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01EXF8P51OZM61WxYO14vnmLhPeWvr5CpBz",
+            "name": "Sleep",
+            "title": "Sleep for 30s",
+            "type": "core.sleep",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Sleep for 30s",
+              "skip_execution": false,
+              "sleep_interval": 30
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01EXF8P5OZJT26LSIAzclsspSaAW84VsteA",
+            "name": "Generic CCS API Request",
+            "title": "GET workflow instances",
+            "type": "ccs.api_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "api_call_method": "GET",
+              "continue_on_failure": false,
+              "display_name": "GET workflow instances",
+              "relative_url": "be-console/api/v1/instances?workflow_id=$activity.definition_activity_01E4EJIDUPR012qxqdn1ysclt0iT0vOXBak.output.jsonpath_queries.Workflow ID$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01f9IQgvQRJv3tvlqwR145Bbrye0toH0Q"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01EXF8P6FBX2L1hydtNLJg1ii8lRkpeq26o",
+            "name": "JSONPath Query",
+            "title": "Extract Instance Status",
+            "type": "corejava.jsonpathquery",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": true,
+              "display_name": "Extract Instance Status",
+              "input_json": "$activity.definition_activity_01E59JL1WSCHD5emfAdBdYA1tw5z7Cr84bu.output.response_body$",
+              "jsonpath_queries": [
+                {
+                  "jsonpath_query": "$..status.state",
+                  "jsonpath_query_name": "InstanceStatus",
+                  "jsonpath_query_type": "string"
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01EXF8P76V5HK2d4FDJmt2bTYhYPqd7L2G3",
+            "name": "Condition Block",
+            "title": "Did workflow trigger?",
+            "type": "logic.if_else",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Did workflow trigger?",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01EXF8P84AC5Z4Mbq7EwP0x2ZDcTviM4GS1",
+                "name": "Condition Branch",
+                "title": "YES",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01E59JL3VPQBD1XiTca9IASAwdittEgnGG0.output.jsonpath_queries.InstanceStatus$",
+                    "operator": "eq",
+                    "right_operand": "success"
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "YES",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01EXF8P93GDZK5eqzPzmCLswbk8pZFglkvi",
+                    "name": "Add Row to Table",
+                    "title": "Test Passed",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Test Passed",
+                      "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                      "row": [
+                        {
+                          "key": "TestScenarios",
+                          "type": "string",
+                          "value": "SSL Cert"
+                        },
+                        {
+                          "key": "Status",
+                          "type": "string",
+                          "value": "Passed"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01EXF8P9UZP7E0SkY7X3vIyMPxd7dsehGeJ",
+                "name": "Condition Branch",
+                "title": "NO",
+                "type": "logic.condition_block",
+                "base_type": "activity",
+                "properties": {
+                  "condition": {
+                    "left_operand": "$activity.definition_activity_01E59JL1WSCHD5emfAdBdYA1tw5z7Cr84bu.output.response_body$",
+                    "operator": "eq",
+                    "right_operand": ""
+                  },
+                  "continue_on_failure": false,
+                  "display_name": "NO",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01EXF8PAQM57S7GOAqY4br7P4WjffIa4wAl",
+                    "name": "Add Row to Table",
+                    "title": "Test Failed",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Test Failed",
+                      "input_table": "$workflow.definition_workflow_01E3LJWATZ4PR24JYlWEVD2wdsFy8qGIm2u.local.variable_workflow_01E591STCE63M6uIyzYJD44oGdA2sPfHHJC$",
+                      "row": [
+                        {
+                          "key": "TestScenarios",
+                          "type": "string",
+                          "value": "SSL Cert"
+                        },
+                        {
+                          "key": "Status",
+                          "type": "string",
+                          "value": "Failed"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
                   }
                 ]
               }
@@ -2176,8 +3218,76 @@
       }
     ],
     "categories": [
-      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+      "category_01ES6TAHPJVYJ4FL66AqJ8NEz5Hfahh4LoS"
     ]
+  },
+  "categories": {
+    "category_01ES6TAHPJVYJ4FL66AqJ8NEz5Hfahh4LoS": {
+      "unique_name": "category_01ES6TAHPJVYJ4FL66AqJ8NEz5Hfahh4LoS",
+      "name": "RG Automation",
+      "title": "RG Automation",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "triggers": {
+    "triggerevent_01EXAT83A6BII4p46uu4jEw1nstH5COfPY0": {
+      "workflow_id": "definition_workflow_01EXAS395D31M15bGOk1uA6Y7sj3L2RngG0",
+      "name": "RG Kafka header",
+      "title": "",
+      "lowercase_name": "event.rg_kafka_header",
+      "type": "event",
+      "base_type": "trigger",
+      "ref_id": "event_01DV1HAXWAQJ85Oae0gYEhL5C3NpfLLgIHj",
+      "version": "1.0.0",
+      "disabled": false,
+      "unique_name": "triggerevent_01EXAT83A6BII4p46uu4jEw1nstH5COfPY0",
+      "object_type": "triggerevent"
+    }
+  },
+  "events": {
+    "event_01DV1HAXWAQJ85Oae0gYEhL5C3NpfLLgIHj": {
+      "name": "RG Kafka header",
+      "title": "RG Kafka header",
+      "type": "kafka.event",
+      "base_type": "event",
+      "object_type": "event",
+      "target_id": "definition_target_01DUANS1BWS6X71eUh0ttWOBAOcfrNl1IXx",
+      "webhook_id": "",
+      "version": "1.0.0",
+      "properties": {
+        "conditions": {
+          "left_operand": "$output.headers[0].header_key$",
+          "operator": "eq",
+          "right_operand": "test"
+        },
+        "display_name": "RG kafka event",
+        "target_id": "definition_target_01DUANS1BWS6X71eUh0ttWOBAOcfrNl1IXx",
+        "title": "RG Kafka header",
+        "topic_name": "tl-kafka-topic"
+      },
+      "unique_name": "event_01DV1HAXWAQJ85Oae0gYEhL5C3NpfLLgIHj"
+    }
+  },
+  "targets": {
+    "definition_target_01DUANS1BWS6X71eUh0ttWOBAOcfrNl1IXx": {
+      "unique_name": "definition_target_01DUANS1BWS6X71eUh0ttWOBAOcfrNl1IXx",
+      "name": "RG Kafka",
+      "title": "RG Kafka",
+      "type": "kafka.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "RG Kafka",
+        "host": "10.88.38.124",
+        "no_runtime_user": true,
+        "port": 9092,
+        "ssl_enable": false
+      }
+    }
   },
   "target_groups": {
     "target_group_01E4J1PJ7PKVN1E0Hy98TgSwVZBW95uwkdn": {
@@ -2217,5 +3327,73 @@
       "base_type": "datatype",
       "object_type": "tabletype"
     }
-  }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_01EXAS395D31M15bGOk1uA6Y7sj3L2RngG0",
+        "name": "RG trigger References",
+        "title": "RG trigger References",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.string",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "Output String",
+              "type": "datatype.string",
+              "is_required": false
+            },
+            "unique_name": "variable_workflow_01EXATTBZH1BV6sqSzBhoCYFYXOm8fW3ZZw",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "RG trigger References",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "specify_on_workflow_start": false,
+            "target_default": true
+          },
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "specify_on_workflow_start": false
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01EXATGX89ZBR4vNAnO1Rm8vMxwnts9GWIJ",
+            "name": "Set Variables",
+            "title": "Set Variables",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01EXAS395D31M15bGOk1uA6Y7sj3L2RngG0.output.variable_workflow_01EXATTBZH1BV6sqSzBhoCYFYXOm8fW3ZZw$",
+                  "variable_value_new": "$trigger.triggerevent_01EXAT83A6BII4p46uu4jEw1nstH5COfPY0.output.headers[0].header_key$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ]
 }
