@@ -10,59 +10,12 @@
         "schema_id": "datatype.integer",
         "properties": {
           "value": 0,
-          "scope": "output",
-          "name": "Final Count Succeeded",
+          "scope": "local",
+          "name": "Test Failed",
           "type": "datatype.integer",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01BA9X1F5WLM10i565naiTrW9sDXcbME8Eu",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 1,
-          "scope": "local",
-          "name": "loop count",
-          "type": "datatype.integer",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01BA9XNGNU6LL1WANe2IXIiynQ98ON6IeG7",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01BA9WKCP5TIE7f6qg46HByzSPpHYZ21Jdw",
-        "properties": {
-          "scope": "local",
-          "name": "Failed Test Case Table",
-          "type": "datatype.table",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01BA9WP87T5QW53dG6JxHjUJxUUMv2F7HFE",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "Results",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01BA9YVGR7LVU4wxY18Vx3OwuFRdXM0f2kg",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "/root/web.sh",
-          "scope": "output",
-          "name": "Output file",
-          "type": "datatype.string",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01BA9YPGCXFRX3LrLT7plbFColjggRZQFll",
+        "unique_name": "variable_workflow_01BA9ZK8C3OM47doWEEhonf9yuSvSRTx8Qw",
         "object_type": "variable_workflow"
       },
       {
@@ -75,67 +28,6 @@
           "is_required": false
         },
         "unique_name": "variable_workflow_01BA9ZOM3PQ5K0Vrxj4E9KhzEGWF2F7V3xv",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.integer",
-        "properties": {
-          "value": 0,
-          "scope": "output",
-          "name": "Final Test Count - Failed",
-          "type": "datatype.integer",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01BA9X8UEM5DQ7UteYfDwtuKRcCBT3Qri19",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_0172TK6NRMI8A3W1hJ6bDz2mADkoowSKtUH",
-        "properties": {
-          "scope": "output",
-          "name": "List of Failed Test Cases",
-          "type": "datatype.table",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01BDPTZVMJ46E3F6Dg2ah0SArJIIjarwDM3",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "tabletype_01BA9WKCP5TIE7f6qg46HByzSPpHYZ21Jdw",
-        "properties": {
-          "value": [
-            {
-              "column_data": {
-                "TestCase": "POST - Create Target"
-              }
-            },
-            {
-              "column_data": {
-                "TestCase": "Test Options Method"
-              }
-            },
-            {
-              "column_data": {
-                "TestCase": "Test GET method"
-              }
-            },
-            {
-              "column_data": {
-                "TestCase": "Test PATCH method"
-              }
-            },
-            {
-              "column_data": {
-                "TestCase": "Test Connect Method"
-              }
-            }
-          ],
-          "scope": "output",
-          "name": "List of Succeeded Test Cases",
-          "type": "datatype.table",
-          "is_required": false
-        },
-        "unique_name": "variable_workflow_01BDPYWWHPJBN6pyY5Tp9wwJ95rkd3GH88G",
         "object_type": "variable_workflow"
       },
       {
@@ -177,15 +69,135 @@
         "object_type": "variable_workflow"
       },
       {
+        "schema_id": "tabletype_01BA9WKCP5TIE7f6qg46HByzSPpHYZ21Jdw",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "TestCase": "POST - Create Target"
+              }
+            },
+            {
+              "column_data": {
+                "TestCase": "Test Options Method"
+              }
+            },
+            {
+              "column_data": {
+                "TestCase": "Test GET method"
+              }
+            },
+            {
+              "column_data": {
+                "TestCase": "Test PATCH method"
+              }
+            },
+            {
+              "column_data": {
+                "TestCase": "Test Connect Method"
+              }
+            }
+          ],
+          "scope": "output",
+          "name": "List of Succeeded Test Cases",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01BDPYWWHPJBN6pyY5Tp9wwJ95rkd3GH88G",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Results",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01BA9YVGR7LVU4wxY18Vx3OwuFRdXM0f2kg",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "LARGE string",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01EZY7ZFZ63UM1du7d5xKjDqfm7vfTzVYwt",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "/root/web.sh",
+          "scope": "output",
+          "name": "Output file",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01BA9YPGCXFRX3LrLT7plbFColjggRZQFll",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01BA9WKCP5TIE7f6qg46HByzSPpHYZ21Jdw",
+        "properties": {
+          "scope": "local",
+          "name": "Failed Test Case Table",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01BA9WP87T5QW53dG6JxHjUJxUUMv2F7HFE",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.integer",
         "properties": {
           "value": 0,
-          "scope": "local",
-          "name": "Test Failed",
+          "scope": "output",
+          "name": "Final Test Count - Failed",
           "type": "datatype.integer",
           "is_required": false
         },
-        "unique_name": "variable_workflow_01BA9ZK8C3OM47doWEEhonf9yuSvSRTx8Qw",
+        "unique_name": "variable_workflow_01BA9X8UEM5DQ7UteYfDwtuKRcCBT3Qri19",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 1,
+          "scope": "local",
+          "name": "loop count",
+          "type": "datatype.integer",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01BA9XNGNU6LL1WANe2IXIiynQ98ON6IeG7",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_0172TK6NRMI8A3W1hJ6bDz2mADkoowSKtUH",
+        "properties": {
+          "scope": "output",
+          "name": "List of Failed Test Cases",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01BDPTZVMJ46E3F6Dg2ah0SArJIIjarwDM3",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.integer",
+        "properties": {
+          "value": 0,
+          "scope": "output",
+          "name": "Final Count Succeeded",
+          "type": "datatype.integer",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01BA9X1F5WLM10i565naiTrW9sDXcbME8Eu",
         "object_type": "variable_workflow"
       }
     ],
@@ -202,9 +214,7 @@
         "target_default": true
       },
       "target": {
-        "target_type": "web-service.endpoint",
-        "target_id": "definition_target_01GL3E0xdaYZXuqMRV4Hh7u3Q0xvhcQBc",
-        "execute_on_workflow_target": true
+        "no_target": true
       }
     },
     "object_type": "definition_workflow",
@@ -227,10 +237,9 @@
             "override_target_runtime_user": false,
             "target_default": true
           },
-          "skip_execution": false,
+          "skip_execution": true,
           "target": {
-            "override_workflow_target": true,
-            "target_id": "definition_target_0191LAUMTIJQG2rLOHF7awzXjXgGbTPQtfs"
+            "use_workflow_target": true
           }
         },
         "object_type": "definition_activity"
@@ -590,6 +599,38 @@
             "object_type": "definition_activity"
           },
           {
+            "unique_name": "definition_activity_01EY4PPWRL5LL6fhsoB9gmCIQlxhRIu8usg",
+            "name": "HTTP Request",
+            "title": "Test Target - Options",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "continue_on_error_status_code": true,
+              "continue_on_failure": true,
+              "custom_headers": [
+                {
+                  "name": "Authorization",
+                  "value": "Bearer \"$activity.definition_activity_01B55GEYHH12C4zvhlIwb1QObi7nyI4iEgV.output.jsonpath_queries.Token$\""
+                }
+              ],
+              "display_name": "Test Target - Options",
+              "method": "HEAD",
+              "relative_url": "?_format=json\u0026access-token=x5BQQTpurS76Zxgil0S7RaohmgEQbps76nr4",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
             "unique_name": "definition_activity_01B60N1C5M8904b44cti4dVvufunkT88Tak",
             "name": "HTTP Request",
             "title": "Test Target - Options",
@@ -607,16 +648,16 @@
                 }
               ],
               "display_name": "Test Target - Options",
-              "method": "OPTIONS",
+              "method": "HEAD",
               "relative_url": "/targets/$activity.definition_activity_01BAA8AW6ZUU72f1qRsyttydK3iFAo5l6zA.output.jsonpath_queries.Target Schema ID$",
               "runtime_user": {
                 "override_target_runtime_user": false,
                 "target_default": true
               },
-              "skip_execution": false,
+              "skip_execution": true,
               "target": {
                 "override_workflow_target": true,
-                "target_id": "definition_target_01ANAD8KB5UGQ4Y6EZu4pokE6mbB2FVZq0r"
+                "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
               }
             },
             "object_type": "definition_activity"
@@ -628,7 +669,7 @@
             "base_type": "activity",
             "properties": {
               "continue_on_failure": false,
-              "skip_execution": false
+              "skip_execution": true
             },
             "object_type": "definition_activity",
             "blocks": [
@@ -926,6 +967,38 @@
           {
             "unique_name": "definition_activity_01B5608V5A2PA4rIDbW4KaPasaZzcvZHadG",
             "name": "HTTP Request",
+            "title": "Test PATCH - Update User - External Target",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "continue_on_error_status_code": false,
+              "continue_on_failure": true,
+              "custom_headers": [
+                {
+                  "name": "Authorization",
+                  "value": "Bearer EOrJCqpBf_TdqyduHPmrVZq1oNqGZxhxC9SL"
+                }
+              ],
+              "display_name": "Test PATCH - Update User - External Target",
+              "method": "PATCH",
+              "relative_url": "/544",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01EZ3HLVVJNNB42ENGlokayVYS84oQexNoj",
+            "name": "HTTP Request",
             "title": "Test PATCH - Update Target",
             "type": "web-service.http_request",
             "base_type": "activity",
@@ -942,7 +1015,7 @@
                 }
               ],
               "display_name": "Test PATCH - Update Target",
-              "method": "PATCH",
+              "method": "PUT",
               "relative_url": "/targets/$activity.definition_activity_01BAA8AW6ZUU72f1qRsyttydK3iFAo5l6zA.output.jsonpath_queries.Target Schema ID$",
               "runtime_user": {
                 "override_target_runtime_user": false,
@@ -1119,6 +1192,136 @@
                 "override_workflow_target": true,
                 "target_id": "definition_target_01ANAY0M3ENLC6iDLtiv4tsyeM48Ap7sMjl"
               }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01BAAU0SYYEC875KLaIwJQcnmFGQWbcEt9L",
+            "name": "HTTP Request",
+            "title": "Get Targets from External Env - JSON Response body",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": true,
+              "display_name": "Get Targets from External Env - JSON Response body",
+              "method": "GET",
+              "relative_url": "/targets",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01ANAY0M3ENLC6iDLtiv4tsyeM48Ap7sMjl"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01EZY7BD0WAOE5PeFsKr1uSnChMhTnYkw62",
+            "name": "HTTP Request",
+            "title": "Get Targets from External Env - XML  body (LARGE content)",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "application/xml; charset=utf-8",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/xml",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": true,
+              "display_name": "Get Targets from External Env - XML  body (LARGE content)",
+              "method": "GET",
+              "relative_url": "/targets",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01ANAY0M3ENLC6iDLtiv4tsyeM48Ap7sMjl"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01EZYFROFQEGX6unfM25Tv7T9w2hnLK23zY",
+            "name": "HTTP Request",
+            "title": "Get Targets from External Env - TEXT body (LARGE content)",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "text/html",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "text/plain",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": true,
+              "display_name": "Get Targets from External Env - TEXT body (LARGE content)",
+              "method": "GET",
+              "relative_url": "/targets",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01ANAY0M3ENLC6iDLtiv4tsyeM48Ap7sMjl"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01EZYG7SWN37G4CMDJdFyB7FgZNqD7vBfio",
+            "name": "HTTP Request",
+            "title": "Get Targets from External Env - HTML body (LARGE content)",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "accept": "text/html",
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "text/html",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": true,
+              "display_name": "Get Targets from External Env - HTML body (LARGE content)",
+              "method": "GET",
+              "relative_url": "/targets",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01ANAY0M3ENLC6iDLtiv4tsyeM48Ap7sMjl"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01EZY72L5TOOE61srI7pkDt1Z0aEgTPuIfz",
+            "name": "Set Variables",
+            "title": "Set Variables - Assinging String to a LARGE content",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Variables - Assinging String to a LARGE content",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01B55EW2V9IZC4LMnlqE0zQ7eyHhaOvvUJH.local.variable_workflow_01EZY7ZFZ63UM1du7d5xKjDqfm7vfTzVYwt$",
+                  "variable_value_new": "$activity.definition_activity_01EZY7BD0WAOE5PeFsKr1uSnChMhTnYkw62.output.response_body$"
+                }
+              ]
             },
             "object_type": "definition_activity"
           },
@@ -1353,32 +1556,6 @@
         "object_type": "definition_activity"
       },
       {
-        "unique_name": "definition_activity_01BAAU0SYYEC875KLaIwJQcnmFGQWbcEt9L",
-        "name": "HTTP Request",
-        "title": "Get Targets from External Env",
-        "type": "web-service.http_request",
-        "base_type": "activity",
-        "properties": {
-          "action_timeout": 180,
-          "allow_auto_redirect": true,
-          "continue_on_error_status_code": false,
-          "continue_on_failure": true,
-          "display_name": "Get Targets from External Env",
-          "method": "GET",
-          "relative_url": "/Targets",
-          "runtime_user": {
-            "override_target_runtime_user": false,
-            "target_default": true
-          },
-          "skip_execution": false,
-          "target": {
-            "override_workflow_target": true,
-            "target_id": "definition_target_01ANAY0M3ENLC6iDLtiv4tsyeM48Ap7sMjl"
-          }
-        },
-        "object_type": "definition_activity"
-      },
-      {
         "unique_name": "definition_activity_01BAAXBWHMD4Y7hBzDnG0xIk68WCSWrvKhp",
         "name": "HTTP Request",
         "title": "Test Cookies",
@@ -1449,21 +1626,6 @@
     }
   },
   "targets": {
-    "definition_target_0191LAUMTIJQG2rLOHF7awzXjXgGbTPQtfs": {
-      "unique_name": "definition_target_0191LAUMTIJQG2rLOHF7awzXjXgGbTPQtfs",
-      "name": "RG UNIX NEW ",
-      "title": "RG UNIX NEW ",
-      "type": "terminal.unix_linux_endpoint",
-      "base_type": "target",
-      "object_type": "definition_target",
-      "properties": {
-        "bash_shell": "/bin/bash",
-        "default_runtime_user_id": "definition_runtime_user_0191L7DJPZ7LE3hbhUgYvsYLIY35hoIRVP6",
-        "display_name": "RG UNIX NEW ",
-        "host": "sjc-cent59-rac1.tidalsoft.local",
-        "port": 22
-      }
-    },
     "definition_target_01ANAD8KB5UGQ4Y6EZu4pokE6mbB2FVZq0r": {
       "unique_name": "definition_target_01ANAD8KB5UGQ4Y6EZu4pokE6mbB2FVZq0r",
       "name": "RG QETest01 Internal",
@@ -1492,7 +1654,7 @@
         "default_runtime_user_id": "definition_runtime_user_019DI0SDOFXAF3gyUmMEoyJnR8AalqHAhv0",
         "disable_certificate_validation": false,
         "display_name": "RG External CPO ",
-        "host": "cpo-maria-03.tidalsoft.local",
+        "host": "bvt-automation.tidalsoft.local",
         "no_runtime_user": false,
         "path": "/api/v1",
         "port": 51527,
@@ -1516,41 +1678,29 @@
         "protocol": "http"
       }
     },
-    "definition_target_01GL3E0xdaYZXuqMRV4Hh7u3Q0xvhcQBc": {
-      "unique_name": "definition_target_01GL3E0xdaYZXuqMRV4Hh7u3Q0xvhcQBc",
-      "name": " vCenter Server - aus-65esxvc-01 ",
-      "title": " vCenter Server - aus-65esxvc-01 ",
+    "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r": {
+      "unique_name": "definition_target_01EY4OZO5YLYB5Bm0SdhlgriTBRKyWk5E0r",
+      "name": "RG External HTTP ",
+      "title": "RG External HTTP ",
       "type": "web-service.endpoint",
       "base_type": "target",
       "object_type": "definition_target",
       "properties": {
-        "default_runtime_user_id": "definition_runtime_user_01GL392jsVQARIRHOoEdfDPzDJzzwh12H",
         "disable_certificate_validation": true,
-        "display_name": " vCenter Server - aus-65esxvc-01 ",
-        "host": "10.88.102.41",
-        "no_runtime_user": false,
+        "display_name": "RG External HTTP ",
+        "host": "gorest.co.in",
+        "ignore_proxy": true,
+        "no_runtime_user": true,
+        "path": "/public-api/users",
         "protocol": "https"
       }
     }
   },
   "runtime_users": {
-    "definition_runtime_user_0191L7DJPZ7LE3hbhUgYvsYLIY35hoIRVP6": {
-      "unique_name": "definition_runtime_user_0191L7DJPZ7LE3hbhUgYvsYLIY35hoIRVP6",
-      "name": "root NEW",
-      "title": "root NEW",
-      "type": "runtime_user.terminal_password_credentials",
-      "base_type": "runtime_user",
-      "object_type": "definition_runtime_user",
-      "properties": {
-        "display_name": "root NEW",
-        "password": "*****",
-        "user": "*****"
-      }
-    },
     "definition_runtime_user_019DI0SDOFXAF3gyUmMEoyJnR8AalqHAhv0": {
       "unique_name": "definition_runtime_user_019DI0SDOFXAF3gyUmMEoyJnR8AalqHAhv0",
-      "name": "RG tidalsoft NTLM",
-      "title": "RG tidalsoft NTLM",
+      "name": "RG tidalsoft Basic",
+      "title": "RG tidalsoft Basic",
       "type": "runtime_user.web-service_basic_credentials",
       "base_type": "runtime_user",
       "object_type": "definition_runtime_user",
@@ -1558,20 +1708,7 @@
         "auth_option": "*****",
         "basic_password": "*****",
         "basic_username": "*****",
-        "display_name": "RG tidalsoft NTLM"
-      }
-    },
-    "definition_runtime_user_01GL392jsVQARIRHOoEdfDPzDJzzwh12H": {
-      "unique_name": "definition_runtime_user_01GL392jsVQARIRHOoEdfDPzDJzzwh12H",
-      "name": "aus-65esxvc-01 user",
-      "title": "aus-65esxvc-01 user",
-      "type": "runtime_user.web-service_basic_credentials",
-      "base_type": "runtime_user",
-      "object_type": "definition_runtime_user",
-      "properties": {
-        "basic_password": "*****",
-        "basic_username": "*****",
-        "display_name": "aus-65esxvc-01 user"
+        "display_name": "RG tidalsoft Basic"
       }
     }
   },
