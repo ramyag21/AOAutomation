@@ -3314,13 +3314,13 @@
       "display_name": "Test Cases",
       "columns": [
         {
-          "name": "Status",
-          "title": "Status",
+          "name": "TestScenarios",
+          "title": "TestScenarios",
           "type": "string"
         },
         {
-          "name": "TestScenarios",
-          "title": "TestScenarios",
+          "name": "Status",
+          "title": "Status",
           "type": "string"
         }
       ],
